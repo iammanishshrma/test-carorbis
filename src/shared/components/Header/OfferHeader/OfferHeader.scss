@@ -1,0 +1,96 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.announcement-bar {
+    padding: 12px 45px;
+    background: #0A185A;
+    border-bottom: 0.5px solid #2440E6;
+    text-align: $align-center;
+    position: relative;
+    transition: none;
+    overflow: hidden;
+
+    .offer-text {
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &.hiding {
+        height: 0;
+        padding: 0;
+    }
+
+    @media screen and (min-width:$small-medium) {
+        padding: 12px 108px;
+    }
+
+    @media screen and (min-width:$r-1300) {
+        padding: 12px 108px;
+    }
+
+    &>div {
+        text-transform: uppercase;
+        color: #FFCE05;
+        text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+        margin-bottom: 0;
+        @include fontsize(12px);
+        font-weight: $fw-extrabold;
+        line-height: 1.2;
+
+        @media screen and (min-width:$small-medium) {
+            @include fontsize(18px);
+        }
+
+        @media screen and (min-width:$r-1300) {
+            @include fontsize(20px);
+        }
+    }
+
+    a {
+        color: $white;
+        margin-left: 5px;
+        font-weight: $fw-bold;
+        @include transition(0.3s);
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @media screen and (min-width:$small-medium) {
+            margin-left: 10px;
+        }
+    }
+
+    .link-main.head-offer-link {
+        color: #fff;
+        transition: none;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .close-notification {
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 25px;
+
+        .icon-close {
+            background: url(../../../assets/images/header-view-icon-remove.svg) no-repeat;
+            height: 15px;
+            width: 15px;
+            display: block;
+            background-size: 15px auto;
+
+            @media all and (min-width:$small-medium) {
+                height: 20px;
+                width: 20px;
+                background-size: 20px auto;
+            }
+        }
+    }
+}

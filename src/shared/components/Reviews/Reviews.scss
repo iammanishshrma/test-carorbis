@@ -1,0 +1,47 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.rate-wrap {
+    @media all and (min-width:$medium) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.review-select {
+    padding: 18px 0 33px;
+    text-transform: capitalize;
+    @include fontsize(16px);
+    font-weight: $fw-semibold;
+    color: $text-color;
+
+    @media all and (min-width:$small-medium) {
+        display: flex;
+        align-items: center;
+        @include fontsize(17.7778px);
+    }
+
+    @media all and (max-width:767px) {
+        padding: 20px 0 0;
+    }
+
+    .selector-wrapp {
+        max-width: 248px;
+        width: 100%;
+        margin-top: 15px;
+
+        @media all and (min-width:$small-medium) {
+            margin: 0 0 0 20px;
+        }
+
+        .menu-wrapper {
+            width: 100%;
+            border: 1px solid #e8e8e8;
+            border-radius: 6px;
+        }
+    }
+
+    .filter-selected {
+        padding: 10px;
+    }
+}

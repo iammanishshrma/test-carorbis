@@ -1,0 +1,86 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.notification-data {
+
+    .order-wrapper {
+        padding: 10px;
+    }
+
+    .order-body {
+        padding: 15px;
+        box-shadow: none;
+        border: 1px solid #e9e9e9;
+        position: relative;
+
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+
+        }
+
+        .notification-wrap {
+
+            @media all and (min-width:$small-medium) {
+                display: flex;
+                width: calc(100% - 120px);
+            }
+
+            p {
+                margin-bottom: 10px;
+                @include fontsize(13px);
+
+                @media all and (min-width:$small-medium) {
+                    margin-bottom: 0;
+                    @include fontsize(15px);
+                }
+            }
+        }
+
+        .delete-notification {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @media all and (min-width:$small-medium) {
+                justify-content: flex-end;
+            }
+
+            .icon-delete {
+                background: url(../../assets/images/icon-delete.png) no-repeat;
+                width: 15px;
+                height: 15px;
+                background-size: 15px auto;
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            .date {
+                @include fontsize(13px);
+                color: $navy;
+                margin-top: 30px;
+                display: block;
+            }
+        }
+    }
+
+    .notification-img {
+        margin-bottom: 20px;
+
+        @media all and (min-width:$small-medium) {
+            width: 40px;
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .notification-description {
+        @media all and (min-width:$small-medium) {
+            padding-left: 20px;
+        }
+    }
+}

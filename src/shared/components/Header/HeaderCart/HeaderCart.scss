@@ -1,0 +1,94 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.cart-icon {
+    position: relative;
+    margin-bottom: 7px;
+    transition: none;
+    cursor: pointer;
+
+    @media all and (min-width:$small-medium) {
+        margin-bottom: 11px;
+    }
+
+    @media all and (min-width:$desktop) {
+        margin-bottom: 6px;
+        margin-top: 4px;
+    }
+
+
+
+    @media all and (max-width:767px) {
+        margin-bottom: 4px;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    img {
+        max-width: 22px;
+        display: block;
+
+        @media screen and (min-width:$small-medium) {
+            max-width: 22px;
+        }
+
+        @media screen and (min-width:$desktop) {
+            max-width: 23px;
+        }
+    }
+
+    .notifications {
+        font-weight: $fw-extrabold;
+        color: $white;
+        position: absolute;
+        top: -7px;
+        right: -3px;
+        width: 13px;
+        height: 13px;
+        @include fontsize(7px);
+        border-radius: 50%;
+        background: $notify-background;
+        @include flex-property(flex, center, center);
+        z-index: 1;
+
+        @media screen and (min-width:$small-medium) {
+            @include fontsize(10px);
+
+            width: 18px;
+            height: 18px;
+            top: -8px;
+            right: -11px;
+        }
+
+        @media screen and (min-width:$desktop) {
+            top: -13px;
+            right: -15px;
+            line-height: 1;
+            @include fontsize(13.3333px);
+            width: 24px;
+            height: 24px;
+        }
+
+    }
+}
+
+.cart-wrap {
+    &.icons-boxes {
+        @media all and (max-width:767px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            .head-text {
+                color: #666666;
+                @include fontsize(10px);
+                font-weight: 600;
+                font-family: $primary-fontfamily;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+
+.filter-box {
+    &.checkbox-wrap {
+        .custom {
+            width: 100% !important;
+            max-height: 254px !important;
+        }
+    }
+}

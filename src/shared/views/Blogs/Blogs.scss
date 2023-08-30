@@ -1,0 +1,76 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.blog-box {
+    padding: 30px 0;
+
+    h2 {
+        @include fontsize(22px);
+        font-weight: $fw-bold;
+
+
+        @media all and (min-width:$small-medium) {
+            @include fontsize(30px);
+        }
+    }
+
+    .blog-data {
+        margin-bottom: 20px;
+
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        .box-content {
+            padding: 30px 0;
+
+            @media all and (min-width:$small-medium) {
+                width: 66%;
+                padding: 0 0 0 30px;
+            }
+
+            h3 {
+                font-weight: $fw-semibold;
+                @include fontsize(22px);
+                margin-bottom: 15px;
+
+                @media all and (min-width:$medium) {
+                    @include fontsize(30px);
+                }
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            .date-article {
+                color: $light-gray;
+                display: block;
+                @include fontsize(12px);
+                margin-bottom: 15px;
+            }
+
+            .read-article {
+                color: $blue-secondary;
+                font-weight: $fw-semibold;
+                @include fontsize(14px);
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .blog-img {
+            img {
+                width: 100%;
+                display: block;
+            }
+
+            @media all and (min-width:$small-medium) {
+                width: 33%;
+            }
+        }
+    }
+}

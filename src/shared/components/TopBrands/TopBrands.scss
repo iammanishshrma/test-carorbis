@@ -1,0 +1,301 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.top-brands {
+  padding-bottom: 40px;
+
+  .category-boxes {
+    .image-wrap {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media all and (max-width:767px) {
+    padding-bottom: 14px;
+    padding-top: 28px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 60px;
+  }
+
+  h3 {
+    @include fontsize(16px);
+    position: relative;
+    margin-bottom: 28px;
+
+    @media screen and (min-width: $desktop) {
+      @include fontsize(22.2222px);
+      margin-bottom: 68px;
+      line-height: 1.3;
+    }
+  }
+
+  .view-brands {
+    margin-top: 20px;
+    text-align: $align-center;
+    margin-bottom: 18px;
+
+
+    @media screen and (min-width: $small-medium) {
+      margin-top: 20px;
+    }
+
+    a {
+      font-weight: $fw-700;
+      @include fontsize(14px);
+      display: $block;
+      color: $navy-2;
+      line-height: 1;
+      @include flex-property(flex, center, center);
+      @include transition(0.1s);
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .arrow {
+        margin-left: 7px;
+        display: $block;
+        line-height: 0.1;
+      }
+
+      @media screen and (min-width: $r-1300) {
+        @include fontsize(18px);
+      }
+    }
+  }
+}
+
+.brands-wrap {
+  @media all and (max-width:767px) {
+    overflow-x: auto;
+    display: flex;
+    margin: 0 -15px;
+    padding-left: 15px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .slick-arrow {
+    &.slick-prev {
+      background-color: $color-gray;
+      height: 38px;
+      width: 38px;
+      position: absolute;
+      left: -9px;
+      border-radius: 50%;
+      z-index: 2;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      @media all and (min-width: $small-medium) {
+        height: 48px;
+        width: 48px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: url(../../assets/images/arrow-icon-right.svg) no-repeat center/cover;
+        height: 15px;
+        width: 8px;
+        background-size: 8px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        opacity: 1;
+
+        @media all and (min-width: $small-medium) {
+          height: 24px;
+          width: 13px;
+          background-size: 13px auto;
+        }
+      }
+    }
+
+    &.slick-next {
+      background-color: $color-gray;
+      height: 38px;
+      width: 38px;
+      position: absolute;
+      right: -9px;
+      border-radius: 50%;
+      z-index: 2;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      @media all and (min-width: $small-medium) {
+        height: 48px;
+        width: 48px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: url(../../assets/images/arrow-icon-left.svg) no-repeat center/cover;
+        height: 15px;
+        width: 8px;
+        background-size: 8px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        opacity: 1;
+
+        @media all and (min-width: $small-medium) {
+          height: 24px;
+          width: 13px;
+          background-size: 13px auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $small-medium) {
+    display: none;
+  }
+
+  &.desktop-data {
+    display: none;
+
+    @media screen and (min-width: $small-medium) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 22px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-gap: 22px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      grid-column-gap: 15.4px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .slick-list {
+    margin-right: -10px;
+
+    .category-boxes {
+      a {
+        .image-wrap {
+          img {
+            transition: all 0.2s;
+          }
+        }
+      }
+    }
+  }
+
+  .category-boxes {
+    border: 1px solid $category-border;
+    border-radius: 6px;
+    width: auto;
+    margin-right: 10px;
+    transition: 0.2s;
+
+    @media all and (max-width:767px) {
+      margin-right: 0;
+      margin-bottom: 18px;
+    }
+
+    @media screen and (min-width: $small-medium) {
+      margin: 0 0 20px;
+      width: 100%;
+    }
+
+    @media screen and (min-width: $r-1300) {
+      // margin-bottom: 48px;
+    }
+
+    &:hover {
+      transform: scale(1);
+      box-shadow: none;
+
+      @media all and (min-width:768px) {
+        border: 1px solid $base-color;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        background-color: $white;
+        transform: scale(1.08);
+      }
+    }
+
+    a {
+      padding: 26px 12px 18px;
+
+      @media all and (max-width:767px) {
+        padding: 14px 12px;
+      }
+
+      @media screen and (min-width: $r-1300) {
+        padding: 26px 12px 22px;
+      }
+
+
+
+      .image-wrap {
+        @media screen and (min-width: $desktop) {
+          margin-bottom: 20px;
+          height: 74px !important;
+        }
+      }
+
+      .category-title {
+        text-transform: initial;
+        @include fontsize(12px);
+        line-height: 1.3;
+        font-weight: $fw-regular;
+
+        @media all and (max-width:767px) {
+          margin-top: 10px;
+        }
+
+        @media all and (min-width:$desktop) {
+          @include fontsize(17.7778px);
+        }
+
+        @media screen and (min-width: $r-1300) {
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  &.homepage-top-brand {
+    .category-boxes {
+      a {
+        @media all and (min-width:768px) {
+          padding: 27px 12px 27px;
+        }
+
+        .image-wrap {
+          @media all and (min-width:768px) {
+            height: 60px;
+          }
+
+          @media all and (min-width:1200px) {
+            height: 66px;
+          }
+        }
+      }
+    }
+  }
+}

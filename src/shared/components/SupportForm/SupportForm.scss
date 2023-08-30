@@ -1,0 +1,70 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.support-form-wrap {
+    h2 {
+        color: $black;
+        @include fontsize(18px);
+        font-weight: $fw-bold;
+        margin-bottom: 30px;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22px);
+        }
+    }
+
+    .text-area-element {
+        background-color: transparent;
+        margin-bottom: 7px;
+
+        &:focus {
+            border: 2px solid #0d1e70;
+        }
+    }
+
+    .textarea-wrapper {
+        textarea {
+            resize: none;
+            border: none;
+            width: 100%;
+            height: 130px;
+        }
+    }
+
+    .form-btn {
+        background-color: $navy;
+        color: $white;
+        font-weight: $fw-bold;
+        padding: 13px 10px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        border-radius: 6px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+        transition: none;
+        cursor: pointer;
+        @include fontsize(16px);
+
+        @media all and (min-width: $small-medium) {
+            max-width: 248px;
+            margin: 0 auto;
+        }
+
+        @media all and (min-width: $medium) {
+            @include fontsize(20px);
+        }
+
+        &:hover {
+            background-color: $gray02;
+            color: $black;
+            border: 1px solid transparent;
+        }
+
+        &:focus {
+            box-shadow: none;
+            border: 1px solid transparent;
+        }
+    }
+}

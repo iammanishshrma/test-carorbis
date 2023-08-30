@@ -1,0 +1,34 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.bestseller-product {
+  &.all-product {
+    @media all and (min-width: $small-medium) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    @media all and (min-width: $medium) {
+      justify-content: flex-start;
+      margin-right: -15px;
+    }
+
+    .product-wrap {
+      margin-bottom: 15px;
+
+      @media all and (min-width: $small-medium) {
+        width: calc(50% - 25px);
+      }
+
+      @media all and (min-width: $medium) {
+        width: calc(33.33% - 15px);
+        margin-right: 15px;
+      }
+
+      @media all and (min-width: $desktop) {
+        width: calc(25% - 15px);
+      }
+    }
+  }
+}

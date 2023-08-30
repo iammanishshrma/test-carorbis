@@ -1,0 +1,454 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.detail-slider {
+  display: flex;
+  justify-content: space-between;
+
+  .slick-list {
+    max-height: 500px;
+
+    .slick-track {
+      height: auto !important;
+    }
+  }
+
+  .slick-slide {
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .slide-img {
+      width: 100%;
+
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  .slick-slider {
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .nav-first {
+    width: calc(100% - 90px);
+
+    @media all and (min-width:$desktop) {
+      width: calc(100% - 102px);
+    }
+
+    .img-wrap {
+      @media all and (min-width:$small-medium) {
+        height: 350px;
+
+        img {
+          // height: 100%;
+          object-fit: contain;
+
+        }
+      }
+
+      @media all and (min-width:$desktop) {
+        height: 556px;
+      }
+
+      figure {
+        width: 100%;
+        height: 100%;
+
+        >div {
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+
+      figure {
+        >div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    @media all and (min-width:1500px) {
+      width: calc(100% - 105px);
+    }
+
+    order: 2;
+    position: relative;
+    z-index: 99999;
+
+    img {
+      width: 100%;
+      max-width: none;
+    }
+
+    .slick-next {
+      right: 10px !important;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &::before {
+        content: "";
+        background: url(../../../assets/images/slider-right-icon.svg) no-repeat;
+        height: 24px;
+        width: 13px;
+        background-size: 13px auto;
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .slick-prev {
+      left: 10px !important;
+      z-index: 1;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &::before {
+        content: "";
+        background: url(../../../assets/images/slider-left-icon.svg) no-repeat;
+        height: 24px;
+        width: 13px;
+        background-size: 13px auto;
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .share-product {
+      margin: 10px 0 20px;
+      color: $text-color;
+      @include fontsize(14px);
+      display: block;
+
+      @media all and (min-width: $desktop) {
+        margin: 0 24px 0 0;
+        @include fontsize(17.7778px);
+      }
+    }
+
+    .social-media {
+      @media all and (min-width: $desktop) {
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+      }
+    }
+
+    .share-media {
+      display: flex;
+
+      li {
+        position: relative;
+        padding: 0 7px;
+        // border-right: 2px solid #ebebeb;
+        display: flex;
+        align-items: center;
+
+        @media all and (min-width: $small-375) {
+          padding: 0 12px;
+        }
+
+        a {
+          display: block;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+          padding-right: 0;
+        }
+      }
+
+      .social-icon {
+        height: 24px;
+        width: 24px;
+        background-size: 24px auto;
+        display: block;
+        margin-top: 0;
+        transition: none;
+
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .icon-fb {
+        background: url(../../../assets/images/fb-prod-new.svg) no-repeat;
+        background-position: center;
+        background-size: 20px auto;
+        height: 20px;
+        width: 20px;
+      }
+
+      .icon-twitter {
+        background: url(../../../assets/images/twitter-prod-new.svg) no-repeat;
+        background-size: 27px auto;
+        background-position: 0 -2px;
+      }
+
+      .icon-insta {
+        background: url(../../../assets/images/instagram-prod-new.svg) no-repeat;
+      }
+
+      .icon-email {
+        background: url(../../../assets/images/email-prod-new.svg) no-repeat;
+        background-size: 28px auto;
+        background-position: center;
+      }
+
+      .icon-wtsapp {
+        background: url(../../../assets/images/whatsapp-prod-new.svg) no-repeat;
+      }
+    }
+  }
+
+  .nav-second {
+    width: 80px;
+    order: 1;
+    position: relative;
+    margin-right: 1px;
+
+    // @media all and (min-width:1500px) {
+    //   width: 95px;
+    // }
+
+    .slick-slide {
+      margin-bottom: 3px;
+
+      img {
+        border: 2px solid transparent;
+      }
+
+      &.slick-current {
+        img {
+          border: 2px solid $navy;
+        }
+      }
+
+      &:hover {
+        img {
+          border: 2px solid $navy;
+        }
+      }
+    }
+
+    .slick-next {
+      height: 30px;
+      width: 100%;
+      background-color: $white;
+      border: 1px solid $navy;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &:before {
+        content: "";
+        background: url(../../../assets/images/down-arrow.svg) no-repeat;
+        height: 17px;
+        width: 24px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-size: 24px auto;
+      }
+    }
+
+    .slick-prev {
+      height: 30px;
+      width: 100%;
+      background-color: $white;
+      border: 1px solid $navy;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 1;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &:before {
+        content: "";
+        background: url(../../../assets/images/down-arrow.svg) no-repeat;
+        height: 17px;
+        width: 24px;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-size: 24px auto;
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      width: 100% !important;
+      transition: none;
+      cursor: pointer;
+      display: block;
+    }
+
+    .p-scrollpanel-content {
+      width: 100%;
+      overflow-y: auto !important;
+      padding: 1px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .slide-img {
+    margin-bottom: 13px;
+    padding: 5px;
+    border-radius: 3px;
+
+    &.active-slick {
+      border: 1px solid $navy;
+    }
+
+    >div {
+      >div {
+        &:last-child {
+          left: -20px !important;
+        }
+      }
+    }
+
+    position: relative;
+
+    &::after {
+      border: 2px solid $navy;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      display: none;
+    }
+
+    .slide-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    .add-wrap {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .add-icon {
+        background: url(../../../assets/images/show-more-icon.svg) no-repeat;
+        height: 24px;
+        width: 24px;
+        background-size: 24px;
+      }
+    }
+
+    h4 {
+      color: $white;
+      @include fontsize(14px);
+      margin-bottom: 0;
+      margin-top: 3px;
+    }
+  }
+}
+
+.input-position {
+  >div {
+    >img {
+      max-height: 556px;
+      width: 100%;
+      object-fit: cover;
+
+
+      @media all and (min-width:1500px) {
+        max-height: none;
+        height: 556px;
+      }
+    }
+  }
+}
+
+
+
+.custom {
+  .p-scrollpanel-bar {
+    background-color: $white-secondary;
+    opacity: 1;
+    transition: background-color .3s;
+    width: 5px !important;
+
+    @media all and (max-width:767px) {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .p-scrollpanel-bar {
+      background-color: $navy;
+    }
+  }
+}
+
+.p-scrollpanel-content {
+  overflow: unset !important;
+  overflow-y: scroll !important;
+  padding: 0;
+
+  @media all and (min-width:768px) {
+    max-height: 264px;
+  }
+
+  @media all and (min-width: 1024px) {
+    max-height: 406px;
+  }
+
+  @media all and (min-width: $desktop) {
+    max-height: 556px;
+  }
+
+  // @media all and (min-width: 1400px) {
+  //   max-height: 480px;
+  // }
+}

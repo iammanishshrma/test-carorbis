@@ -1,0 +1,103 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.move-to-cart {
+    background-color: $yellow02;
+    border-radius: 5px;
+    // margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    font-weight: $fw-semibold;
+    text-transform: uppercase;
+    color: $black;
+    margin-top: auto;
+
+    @media all and (min-width:$small-medium) {
+        padding: 13px 10px;
+    }
+
+    &:hover {
+        background-color: $gray02;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+}
+
+.wishlist-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+
+    @media all and (min-width:$small-medium) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 15px;
+    }
+
+    @media all and (min-width:$medium) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 15px;
+    }
+
+    @media all and (min-width:$desktop) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 15px;
+    }
+
+    .product-wrap {
+        width: 100% !important;
+        position: relative;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 35px;
+
+        .card-head {
+            padding: 0 6px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .icon-delete {
+                background: url(../../assets/images/delete-wishlist.svg) no-repeat;
+                height: 18px;
+                width: 16px;
+                display: block;
+                background-size: 16px auto;
+                cursor: pointer;
+            }
+
+            .stock-availablity {
+                font-family: $primary-fontfamily;
+                @include fontsize(12px);
+                color: #019800;
+
+                &.out-of-stock {
+                    color: $black;
+                }
+
+                &.few-left {
+                    color: #E36000;
+                }
+
+                @media all and (min-width:1200px) {
+                    @include fontsize(14px);
+                }
+            }
+        }
+
+        .product-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-discount {
+            margin-bottom: 15px !important;
+        }
+    }
+}

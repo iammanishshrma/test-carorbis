@@ -1,0 +1,50 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.slider-content {
+  margin-bottom: 30px;
+
+  @media all and (min-width: $small-medium) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+
+  .lgt-slider {
+    margin-bottom: 30px;
+    z-index: 2;
+
+    @media all and (min-width: $small-medium) {
+      position: sticky;
+      top: 5px;
+      left: 0;
+      width: 48%;
+    }
+
+    @media all and (min-width: $desktop) {
+      width: 51%;
+    }
+
+  }
+
+  .rgt-slider {
+    @media all and (min-width: $small-medium) {
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    @media all and (min-width: $desktop) {
+      width: 45.5%;
+    }
+
+
+    @media all and (min-width: $desktop) {
+      .slider-rgt {
+        width: 85%;
+      }
+
+    }
+  }
+}

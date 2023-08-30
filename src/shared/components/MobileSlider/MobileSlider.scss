@@ -1,0 +1,96 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.mob-slide-wrp {
+    padding: 15px 15px 35px;
+    position: relative;
+
+    .slick-dots {
+        li {
+            margin: 0;
+
+            button {
+                &::before {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .share {
+
+        position: absolute;
+        top: 25px;
+        right: 25px;
+
+        z-index: 99;
+        background: #fff;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon-share {
+            background: url(../../assets/images/email-icon-mobile.svg) no-repeat;
+            width: 18px;
+            height: 15px;
+            background-size: 18px auto;
+            margin: 0;
+        }
+    }
+
+    .slick-slider {
+        .img-wrap {
+            height: 308px;
+            width: 100%;
+            position: relative;
+            img {
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+    }
+
+    .swiper {
+        &.swiper-initialized {
+            &.swiper-horizontal {
+                // height: 308px !important;
+                padding-bottom: 35px;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #E3E3E3 !important;
+            height: 9px !important;
+            width: 9px !important;
+            border-radius: 50% !important;
+
+            &.swiper-pagination-bullet-active {
+                background-color: #1F1F1F !important;
+            }
+        }
+
+        .swiper-zoom-container {
+            .img-wrap {
+                width: 100%;
+                height: 308px;
+                img {
+                    height: 100%;
+                    object-fit: contain;
+                    max-height: 308px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .swiper-button-prev {
+            display: none !important;
+        }
+
+        .swiper-button-next {
+            display: none !important;
+        }
+    }
+}

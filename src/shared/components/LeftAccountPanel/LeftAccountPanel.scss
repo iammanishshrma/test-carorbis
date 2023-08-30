@@ -1,0 +1,77 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.profile-info {
+  padding: 18px 20px;
+  border: 1px solid $white-secondary;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+
+  @media all and (min-width: $small-medium) {
+    padding: 25px 20px;
+  }
+
+  .profile-icon {
+    background: url(../../assets/images/user-profile-new.svg) no-repeat;
+    height: 40px;
+    width: 40px;
+    background-size: 40px auto;
+    display: block;
+    margin-right: 13px;
+    border-radius: 50%;
+  }
+
+  .profile-icon__img {
+    height: 40px;
+    width: 40px;
+    background-size: 40px auto;
+    display: block;
+    margin-right: 13px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .profile-icon__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  h2 {
+    margin-bottom: 12px;
+    @include fontsize(14px);
+    color: $navy;
+
+    @media all and (min-width: $small-medium) {
+      @include fontsize(16px);
+    }
+  }
+
+  h3 {
+    margin-bottom: 0;
+    color: $navy;
+    font-weight: $fw-bold;
+
+    @include fontsize(16px);
+
+    @media all and (min-width: $small-medium) {
+      @include fontsize(18px);
+    }
+  }
+}
+
+.left-account {
+  margin-bottom: 20px;
+
+  @media all and (min-width: $medium-992) {
+    width: 321px;
+    margin-bottom: 0;
+  }
+
+  @media all and (min-width: $desktop) {
+    width: 348px;
+  }
+}

@@ -1,0 +1,41 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.bestsellers-wrap {
+  padding-bottom: 40px;
+
+  @media all and (max-width:767px) {
+    padding-top: 32px;
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width: $small-medium) {
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: $r-1300) {
+    padding-bottom: 60px;
+  }
+
+  h3 {
+    @include fontsize(16px);
+    position: relative;
+    margin-bottom: 28px;
+
+    @media screen and (min-width: $desktop) {
+      @include fontsize(22.2222px);
+      margin-bottom: 45px;
+      line-height: 1.3;
+    }
+  }
+}
+
+.bestseller-product {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: $small-medium) {
+    flex-wrap: initial;
+  }
+}

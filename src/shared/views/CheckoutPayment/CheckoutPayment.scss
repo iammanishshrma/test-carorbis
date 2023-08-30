@@ -1,0 +1,601 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.checkout-final {
+    display: flex;
+    padding: 30px 0;
+
+    @media all and (max-width:767px) {
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+
+    .go-back {
+        margin-bottom: 15px;
+
+        @media all and (max-width:767px) {
+            padding: 20px 20px 20px;
+            box-shadow: 0px 1px 2px 0 rgba(56, 56, 56, 0.25);
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-bottom: 35px;
+        }
+    }
+}
+
+.payment-method-wrap {
+    @media all and (min-width:$desktop) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .rtl-address {
+        @media all and (min-width:$medium) {
+            width: 100%;
+        }
+
+        @media all and (min-width:$desktop) {
+            width: 40%;
+        }
+
+        .processs-btn-wrap {
+            .remove-btn {
+                display: none;
+            }
+        }
+    }
+}
+
+.checkout-payment {
+    @media all and (min-width:$desktop) {
+        width: 60%;
+        padding-right: 20px;
+    }
+
+    h2 {
+        @include fontsize(16px);
+        font-weight: $fw-bold;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22px);
+        }
+    }
+
+    .checkout-payment-wrap {
+        border: 1px solid #E9E9E9;
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.03);
+        border-radius: 6px;
+        margin-bottom: 30px;
+
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            border-right: 1px solid $white-secondary;
+
+            .mode-pay {
+                .pay-head {
+                    @include fontsize(16px);
+                    line-height: 1;
+                    font-weight: $fw-semibold;
+
+                    @media all and (min-width:$desktop) {
+                        @include fontsize(17.7778px);
+                    }
+                }
+
+                p {
+                    font-weight: $fw-regular;
+                    @include fontsize(12px);
+                    color: #6A6B6B;
+                    margin-top: 5px;
+
+                    @media all and (min-width:$desktop) {
+                        @include fontsize(15.5556px);
+                    }
+                }
+            }
+
+            @media all and (min-width:$small-medium) {
+                width: 35%;
+            }
+        }
+
+        .mode-list {
+            background: $gray02;
+            border-bottom: 1px solid $white-secondary;
+            display: flex;
+            padding: 27px 24px;
+            font-weight: 600;
+            justify-content: space-between;
+
+            .pay-text-wrp {
+                display: flex;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.active {
+                background: $white;
+                color: $navy;
+                font-weight: $fw-bold;
+
+                .pay-head {
+                    font-weight: $fw-bold;
+                }
+
+                .icon-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .icon-arrow {
+                background: url(../../assets/images/payment-arrow.svg) no-repeat;
+                width: 13px;
+                height: 8px;
+                background-size: 13px auto;
+                display: block;
+                flex-shrink: 0;
+
+                @media all and (min-width:$small-medium) {
+                    display: none;
+                }
+            }
+
+            .icon-cod {
+                background: url(../../assets/images/cash_on_delivery.svg) no-repeat;
+                width: 18px;
+                height: 18px;
+                background-size: 18px auto;
+                display: block;
+                margin-right: 10px;
+                flex-shrink: 0;
+            }
+
+            .icon-card {
+                background: url(../../assets/images/credit_debit_new.svg) no-repeat;
+                width: 18px;
+                height: 18px;
+                background-size: 18px auto;
+                display: block;
+                margin-right: 10px;
+                flex-shrink: 0;
+            }
+
+            .icon-upi {
+                background: url(../../assets/images/icon-upi.svg) no-repeat;
+                width: 10px;
+                height: 18px;
+                background-size: 10px auto;
+                display: block;
+                margin-right: 10px;
+            }
+
+            .icon-wallet {
+                background: url(../../assets/images/icon-wallet.svg) no-repeat;
+                width: 18px;
+                height: 16px;
+                background-size: 18px auto;
+                display: block;
+                margin-right: 10px;
+            }
+
+            .icon-bank {
+                background: url(../../assets/images/icon-net-banking.svg) no-repeat;
+                width: 17px;
+                height: 18px;
+                background-size: 17px auto;
+                display: block;
+                margin-right: 10px;
+            }
+
+            .icon-emi {
+                background: url(../../assets/images/icon-emi.svg) no-repeat;
+                width: 18px;
+                height: 14px;
+                background-size: 18px auto;
+                display: block;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.payment-mode {
+    padding: 20px;
+
+    .accept-card {
+        @include fontsize(10px);
+        color: #6A6B6B;
+        font-weight: 500;
+        display: flex;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .card-list {
+        display: flex;
+
+        .visa {
+            background: url(../../assets/images/visa-new.svg) no-repeat;
+            width: 32px;
+            height: 20px;
+            background-size: 32px auto;
+            margin-right: 14px;
+            margin-left: 12px;
+        }
+
+        .master-card {
+            background: url(../../assets/images/master-new.svg) no-repeat;
+            width: 21px;
+            height: 12px;
+            background-size: 20px auto;
+            margin-right: 14px;
+        }
+
+        .rupay {
+            background: url(../../assets/images/rupay-new.svg) no-repeat;
+            height: 15px;
+            width: 46px;
+            background-size: 46px auto;
+            margin-right: 14px;
+        }
+
+        .american-express {
+            background: url(../../assets/images/american-new.svg) no-repeat;
+            height: 18px;
+            width: 22px;
+            background-size: 22px auto;
+        }
+    }
+
+    @media all and (min-width:$small-medium) {
+        width: 65%;
+        padding: 30px 24px;
+    }
+
+    .payment-option {
+        position: relative;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #D9D9D9;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        .heading-text {
+            h4 {
+                @include fontsize(13px);
+                color: $text-color;
+                font-weight: $fw-semibold;
+
+                @media all and (min-width:$small-medium) {
+                    @include fontsize(16px);
+                }
+            }
+        }
+
+        .custom-input-wrp {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+
+
+        }
+
+        .card-payment {
+            cursor: pointer;
+            width: 100%;
+            height: 20px;
+            opacity: 0;
+            z-index: 1;
+            position: absolute;
+
+            &:checked {
+                ~.custom-radio {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $navy;
+                        border-radius: 50%;
+                        border: 5px solid $white;
+                    }
+
+                    ~.card-wrapper {
+                        .selected-column {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .custom-radio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 2px solid $navy;
+        }
+
+        .card-wrapper {
+            padding-left: 30px;
+
+            h3 {
+                @include fontsize(14px);
+                margin-bottom: 27px;
+                display: flex;
+                align-items: center;
+
+                @media all and (min-width:$r-1300) {
+                    @include fontsize(18px);
+                }
+            }
+
+            .icon-mastercard {
+                background: url(../../assets/images/icon-mastercard.svg) no-repeat;
+                width: 31px;
+                height: 20px;
+                background-size: 31px auto;
+                display: block;
+                flex-shrink: 0;
+                margin-left: 8px;
+            }
+
+            .detail-wrap {
+                display: flex;
+                margin-bottom: 5px;
+
+                h4 {
+                    margin-bottom: 0;
+                    @include fontsize(13px);
+                    color: $gray;
+                    font-weight: $fw-semibold;
+                    margin-right: 5px;
+
+                    @media all and (min-width:$desktop) {
+                        @include fontsize(16px);
+                    }
+                }
+
+                .detail-value {
+                    @include fontsize(13px);
+                    color: $text-color;
+                    font-weight: $fw-bold;
+
+                    @media all and (min-width:$desktop) {
+                        @include fontsize(16px);
+                    }
+                }
+            }
+
+            .card-details {
+                margin-bottom: 20px;
+
+                @media all and (min-width:1360px) {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .detail-wrap {
+                    @media all and (min-width:768px) {
+                        margin-right: 24px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+
+                    @media all and (min-width:1024px) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .selected-column {
+            display: none;
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .payment-input {
+                .cvv-wrap {
+                    .form-control {
+                        max-width: 120px;
+                        padding: 11px 12px;
+                        line-height: 1.2;
+                    }
+                }
+
+                @include fontsize(13px);
+                color: $black;
+                font-weight: $fw-bold;
+                margin-bottom: 20px;
+
+                @media all and (min-width:$desktop) {
+                    @include fontsize(16px);
+                    margin-bottom: 25px;
+                }
+
+                .form-control {
+                    padding-right: 45px;
+                    color: $navy;
+
+                    &::placeholder {
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+
+                .debit-card {
+                    position: relative;
+                }
+
+                .icon-visa {
+                    background: url(../../assets/images/icon-visa.svg) no-repeat;
+                    width: 41px;
+                    height: 14px;
+                    background-size: 41px auto;
+                    display: block;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                }
+
+                .verified-text {
+                    color: rgba(0, 0, 0, 0.25);
+                    font-weight: $fw-semibold;
+                }
+            }
+
+            .form-control {
+                border: 1px solid $white-secondary;
+                border-radius: 6px;
+                @include fontsize(13px);
+                color: $text-color;
+                padding: 11px 10px 11px 10px;
+                width: 100%;
+                transition: none;
+
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+
+                @media all and (min-width:$desktop) {
+                    @include fontsize(16px);
+                }
+
+                &:focus {
+                    border: 2px solid #0D1E70;
+                }
+            }
+
+            .proceed {
+                background: $yellow-secondary;
+                border-radius: 6px;
+                @include fontsize(13px);
+                text-transform: uppercase;
+                color: $text-color;
+                font-weight: $fw-bold;
+                padding: 12px 30px;
+                margin-left: auto;
+                transition: none;
+                text-align: center;
+
+
+                @media all and (min-width:$small-medium) {
+                    @include fontsize(16px);
+                }
+
+                @media all and (min-width:$desktop) {
+                    @include fontsize(20px);
+                    max-width: 240px;
+                    width: 100%;
+                }
+
+                &:hover {
+                    background-color: $gray02;
+                    color: $black;
+
+                }
+            }
+
+            .proceed-wrap {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .payment-option-next {
+        .cvv-payment-wrap {
+            @media all and (min-width:768px) {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .valid-wrap {
+                flex-grow: 1;
+                margin-bottom: 20px;
+
+                @media all and (min-width:768px) {
+                    margin-right: 16px;
+                    margin-bottom: 0;
+                }
+
+                .p-dropdown {
+                    width: 100%;
+                    border: 1px solid #E9E9E9;
+                    height: 44px;
+
+                    .p-inputtext {
+                        padding: 11px 10px 11px 35px;
+                        font-family: $primary-fontfamily;
+                    }
+
+                    &:hover {
+                        border: 1px solid $white-secondary;
+                    }
+
+                    &:focus {
+                        border: 1px solid $navy !important;
+                        outline: 0 !important;
+                        opacity: 1 !important;
+                    }
+                }
+            }
+
+            .valid-date {
+                position: relative;
+            }
+
+            .icon-calender {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+                background: url(../../assets/images/icon-calender.svg) no-repeat;
+                width: 15px;
+                height: 17px;
+                background-size: 15px auto;
+                z-index: 1;
+                margin-top: -1.5px;
+            }
+        }
+
+        .selected-column {
+            .valid-wrap {
+                .select-wrapper {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:767px) {
+    .payment-mode-head {
+        h2 {
+            @include fontsize(16px);
+            font-weight: 700;
+            font-family: $primary-fontfamily;
+        }
+    }
+}

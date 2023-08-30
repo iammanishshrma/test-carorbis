@@ -1,0 +1,281 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.signin-wrap {
+    @media all and (min-width:768px) {
+        max-width: 144px;
+    }
+
+    .title {
+        display: $block;
+        @include fontsize(11px);
+        line-height: 1;
+        font-weight: $fw-regular;
+        margin-bottom: 5px;
+
+        @media screen and (min-width:$desktop) {
+            @include fontsize(11.11111px);
+            margin-bottom: 5px;
+        }
+
+        &.login-user-name {
+            display: flex;
+            align-items: flex-end;
+            text-transform: capitalize;
+
+            @media all and (min-width:$small-medium) {
+                @include fontsize(12px);
+            }
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(13.3333px);
+            }
+        }
+    }
+
+    .arrow-div {
+        @media all and (max-width:767px) {
+            display: none !important;
+        }
+
+        .p-dropdown {
+            min-width: 76.16px;
+
+            @media screen and (min-width:$desktop) {
+                min-width: 93.72px;
+            }
+
+            transition: none;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            .p-dropdown-trigger {
+                width: auto;
+            }
+
+            .p-dropdown-label {
+                color: $base-color;
+                text-transform: $capitalize;
+                line-height: 1.3;
+                @include fontsize(13px);
+                margin-bottom: 0;
+                padding: 0;
+                font-family: $primary-fontfamily;
+                font-weight: $fw-bold;
+
+                @media screen and (min-width:$desktop) {
+                    @include fontsize(16px);
+                }
+            }
+        }
+    }
+
+    .account-wrapper {
+        h3 {
+            color: $base-color;
+            margin-bottom: 0;
+            position: relative;
+            cursor: pointer;
+            min-width: 83px;
+            line-height: 1;
+            font-weight: $fw-semibold;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 9px;
+                height: 4.5px;
+                background: url(../../../assets/images/down-dark-arrow.svg) no-repeat;
+                background-size: cover;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -14px;
+
+                @media screen and (min-width:$desktop) {
+                    width: 11px;
+                    height: 6px;
+                    background-size: 11px auto;
+                }
+            }
+
+            @media screen and (min-width:$desktop) {
+                @include fontsize(15.5556px);
+                min-width: 94px;
+            }
+        }
+
+        .menu-wrraper {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            z-index: 999999;
+            min-width: 175px;
+            overflow: auto;
+            background: $white;
+            border-radius: 10px;
+            border: 1px solid #e8e8e8;
+            opacity: 0;
+            visibility: hidden;
+
+
+            &.menu-active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .account-menu {
+                max-height: 250px;
+
+                &.account-list {
+                    li {
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+
+                    .logout-btn-wrp {
+                        .nav-links {
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+                }
+
+                li {
+                    transition: none;
+
+                    &:first-child {
+                        margin-top: 0.75rem;
+                    }
+
+                    &:hover {
+                        background-color: $gray02;
+
+                        .nav-links {
+                            color: $black;
+                        }
+                    }
+
+                    &.sign-in-list {
+                        margin-top: 0 !important;
+                    }
+
+                    .nav-links {
+                        font-family: $primary-fontfamily;
+                        font-weight: $fw-medium;
+                        @include fontsize(14px);
+                        color: $text-color;
+                        text-transform: capitalize;
+                        border: 0;
+                        background-color: transparent;
+                        line-height: 1.3;
+                        margin-bottom: 0;
+                        opacity: 1;
+                        padding: 0.9rem;
+                        display: block;
+                        margin-top: 0;
+
+                        @media all and (min-width:$desktop) {
+                            @include fontsize(15.5556px);
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.mobile-wrap-account {
+        @media all and (max-width:767px) {
+            background-color: #111E6C;
+            padding: 25px 15px !important;
+            width: 100% !important;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-profile {
+            @media all and (max-width:767px) {
+                background: url(../../../assets/images/user-profile-new.svg) no-repeat;
+                height: 26px;
+                width: 26px;
+                background-size: 26px auto;
+            }
+        }
+
+        @media all and (min-width:768px) {
+            .icon-profile {
+                display: none;
+            }
+        }
+
+        .title {
+
+            @media all and (max-width:767px) {
+                color: #fff;
+                font-size: 16px;
+                margin-left: 10px;
+                margin-bottom: 0;
+                font-family: $primary-fontfamily;
+                align-items: center;
+            }
+
+            .login-username {
+                @media all and (max-width:767px) {
+                    font-size: 18px;
+                    font-weight: 700;
+                    font-family: $primary-fontfamily;
+                    // margin-top: 7px;
+                    text-transform: capitalize;
+                }
+
+                @media all and (min-width:768px) {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        .account-wrapper {
+            h3 {
+                @media all and (max-width:767px) {
+                    color: #fff;
+                    font-size: 16px;
+                }
+
+                &::after {
+                    @media all and (max-width:767px) {
+                        display: none;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 9px;
+                    height: 4.5px;
+                    background: url(../../../assets/images/down-light-arrow.svg) no-repeat;
+                    background-size: cover;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -14px;
+
+                    @media screen and (min-width:$desktop) {
+                        width: 11px;
+                        height: 6px;
+                        background-size: 11px auto;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.wishlist-icon {
+    position: relative;
+    text-align: $align-center;
+    margin-bottom: 7px;
+    transition: none;
+    cursor: pointer;
+    display: block;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    @media screen and (min-width:$small-medium) {
+        margin-bottom: 8px;
+    }
+
+    @media screen and (min-width:$medium) {
+        margin-bottom: 9px;
+    }
+
+    @media screen and (min-width:$desktop) {
+        margin-bottom: 5px;
+        margin-top: 4px;
+    }
+
+    .wishlist-number {
+        width: 9px;
+        height: 9px;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        background-color: $notify-background;
+        @include radius(50%);
+    }
+
+    // &::before {
+    //     @media all and (max-width:767px) {
+    //         right: 0;
+    //     }
+
+    //     @include after(6px, 6px);
+    //     position: absolute;
+    //     top: 0;
+    //     right: 10px;
+    //     background-color: $notify-background;
+    //     @include radius(50%);
+
+    //     @media screen and (min-width:$desktop) {
+    //         width: 9px;
+    //         height: 9px;
+    //     }
+    // }
+
+    img {
+        max-width: 17px;
+
+        @media screen and (min-width:$small-medium) {
+            max-width: 20px;
+        }
+
+        // @media screen and (min-width:$desktop) {
+        //     max-width: 24px;
+        // }
+    }
+}

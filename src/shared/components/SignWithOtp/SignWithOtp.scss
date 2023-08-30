@@ -1,0 +1,33 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+
+
+.icon-mobile {
+    left: 16px;
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    background: url(../../assets/images/icon-mobile-signup.png) no-repeat;
+    background-size: 18px auto;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+.input-otp-wrp {
+    position: relative;
+}
+
+.otp-timer {
+    .otp-wait {
+        position: static;
+    }
+}
+
+.error-msg {
+    &.error-signin {
+        position: static;
+    }
+}

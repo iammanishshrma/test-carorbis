@@ -1,0 +1,65 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.popupBackdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	z-index: 999999;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	.confirmBox {
+		background-color: #fff;
+		border-radius: 10px;
+		width: 100%;
+		max-width: 600px;
+		padding: 20px;
+
+		.confirmBox__heading {
+			text-align: center;
+			text-transform: lowercase;
+			@include fontsize(16px);
+			font-family: $primary-fontfamily;
+			margin-bottom: 20px;
+
+			@media all and (min-width:$desktop) {
+				@include fontsize(17.7778px);
+			}
+
+			&::first-letter {
+				text-transform: uppercase;
+			}
+		}
+
+		.confirmBox__cta {
+			display: flex;
+			justify-content: center;
+
+			.confirmBox__btn {
+				margin: 0 10px;
+				@include fontsize(14px);
+				font-family: $primary-fontfamily;
+				background-color: $navy;
+				font-weight: $fw-medium;
+				text-transform: capitalize;
+
+				&:hover {
+					background-color: $gray02;
+					color: $black;
+				}
+
+				@media all and (min-width:$desktop) {
+					@include fontsize(15.5556px);
+				}
+
+			}
+		}
+
+	}
+
+}

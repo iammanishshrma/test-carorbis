@@ -1,0 +1,112 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.category-boxes {
+  border: 1px solid $transparent;
+  text-align: $align-center;
+  border-right: 1px solid #E2E2E2;
+  transition: all 0.25s;
+  border-bottom: 1px solid #E2E2E2;
+  width: 33%;
+
+  @media screen and (min-width: $small-medium) {
+    &:nth-child(5n + 0) {
+      border-right: 1px solid #E2E2E2;
+    }
+
+    width: 20%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    border-width: 1.5px;
+  }
+
+  @media all and (min-width:$small-medium) {
+    &:hover {
+      transform: scale(1.05);
+      border: 1px solid $base-color !important;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+      border-radius: 6px;
+      background-color: $white;
+    }
+  }
+
+  a {
+    display: $block;
+    padding: 12px;
+
+    @media screen and (min-width: $medium) {
+      padding: 30px 12px 20px;
+    }
+
+    @media screen and (min-width: $r-1300) {
+      padding: 43px 12px 21px;
+    }
+
+    .image-wrap {
+      margin-bottom: 20px;
+      height: 64px;
+
+      @media all and (max-width:767px) {
+        height: 50px;
+        margin-bottom: 5px;
+      }
+
+      @media screen and (min-width: $small-medium) {
+        height: 40px;
+      }
+
+      @media screen and (min-width: $medium) {
+        height: 54px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        height: 74px;
+        margin-bottom: 32px;
+        @include flex-property(flex, center, center);
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        transition: none;
+        margin: 0 auto;
+        width: 100%;
+
+
+        @media screen and (min-width: $desktop) {
+          height: 100%;
+        }
+      }
+    }
+
+    .category-title {
+      @include fontsize(12px);
+      color: $category-text;
+      font-weight: $fw-semibold;
+      text-transform: $uppercase;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      max-width: none;
+      margin: 0 auto;
+      line-height: 1;
+
+      @media screen and (min-width: $medium) {
+        max-width: 132px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        max-width: 175px;
+        @include fontsize(16px);
+      }
+
+      @media screen and (min-width: $r-1300) {
+        @include fontsize(18px);
+        max-width: 197px;
+      }
+    }
+  }
+}

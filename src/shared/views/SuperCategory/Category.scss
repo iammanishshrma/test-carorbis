@@ -1,0 +1,452 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.trending-cat {
+    padding-top: 40px;
+    padding-bottom: 0;
+
+    @media all and (min-width:$small-medium) {
+        padding-top: 0;
+        padding-bottom: 60px;
+    }
+
+    @media all and (min-width:$desktop) {
+        padding-bottom: 60px;
+    }
+
+    h3 {
+        @include fontsize(16px);
+        font-weight: $fw-700;
+        margin-bottom: 15px;
+        color: #000;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22.2222px);
+            margin-bottom: 30px;
+        }
+    }
+
+    .similar-products {
+        .product-wrap {
+            width: 100% !important;
+        }
+
+        .slick-prev {
+            z-index: 1;
+            width: 12px;
+            left: -10px;
+
+            &.slick-disabled {
+                display: none !important;
+            }
+
+            &:before {
+                content: "";
+                background: url(../../assets/images/similar-left-icon.svg) no-repeat;
+                height: 20px;
+                width: 10px;
+                background-size: 10px auto;
+                display: block;
+                opacity: 0.5;
+
+                @media all and (min-width:$desktop) {
+                    height: 28px;
+                    width: 15px;
+                    background-size: 15px auto;
+                }
+
+
+            }
+        }
+
+        .slick-next {
+            z-index: 1;
+            width: 12px;
+            right: -10px;
+
+            &.slick-disabled {
+                display: none !important;
+            }
+
+            &:before {
+                content: "";
+                background: url(../../assets/images/similar-right-icon.svg) no-repeat;
+                height: 20px;
+                width: 10px;
+                background-size: 10px auto;
+                display: block;
+                opacity: 0.5;
+
+                @media all and (min-width:$desktop) {
+                    height: 28px;
+                    width: 15px;
+                    background-size: 15px auto;
+                }
+            }
+        }
+
+        .slick-track {
+            display: flex;
+        }
+
+        .slick-slide {
+            margin-right: -1px;
+            height: inherit;
+
+            >div {
+                height: 100%;
+            }
+
+            .product-wrap {
+                height: 100%;
+            }
+        }
+
+    }
+
+    .slick-track {
+        margin-left: 0 !important;
+    }
+}
+
+.category-page {
+    .top-brands {
+        @media all and (min-width:$small-medium) {
+            padding-top: 40px;
+            padding-bottom: 15px;
+        }
+
+        @media all and (min-width:$desktop) {
+            padding-bottom: 0;
+        }
+    }
+
+    &.brand-category {
+        @media all and (max-width:767px) {
+            .brands-wrap {
+                .category-boxes {
+                    a {
+                        .category-title {
+                            @include fontsize(14px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.faq-category-page {
+    padding: 40px 0;
+
+    @media all and (min-width:$desktop) {
+        padding-top: 70px;
+    }
+
+    .accordion-wrapper {
+        h4 {
+            color: $black;
+        }
+    }
+
+    .p-accordion-header-text {
+        color: $black;
+    }
+
+    &.sub-cat-faq {
+        h3 {
+            @include fontsize(16px);
+            font-weight: $fw-700;
+            margin-bottom: 15px;
+            color: #000;
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(22.2222px);
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.car-accessories-category {
+    .discount-categories-lists {
+        .about-discount {
+            @media all and (min-width:$desktop) {
+                height: 140px;
+            }
+        }
+    }
+}
+
+.category-breadcum {
+    .breadcrumb-wrap {
+        margin: 25px 0;
+
+        @media all and (min-width:$desktop) {
+            margin: 25px 0;
+        }
+    }
+}
+
+.category-page-feature {
+    h3 {
+        @include fontsize(16px);
+        margin-bottom: 20px;
+
+        &::after {
+            display: none;
+        }
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22.2222px);
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.top-brands {
+    &.featured-category {
+        @media all and (min-width:$small-medium) {
+            padding-top: 0;
+            padding-bottom: 40px;
+        }
+
+        h3 {
+            @include fontsize(16px);
+            margin-bottom: 20px;
+
+            &::after {
+                display: none;
+            }
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(22.2222px);
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    @media all and (max-width:767px) {
+        .homepage-top-brand {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 15px;
+            overflow-x: visible;
+            margin: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.best-car-accessories {
+    padding-top: 40px;
+
+    @media all and (min-width:$small-medium) {
+        padding-top: 20px;
+    }
+
+    @media all and (min-width:$desktop) {
+        padding-top: 29px;
+    }
+}
+
+.featured-category {
+    &.category-page-feature {
+        padding-bottom: 40px;
+
+        @media all and (min-width:$small-medium) {
+            padding-bottom: 60px;
+        }
+
+        .category {
+            a {
+                @media all and (min-width:$small-medium) {
+                    padding: 20px 12px;
+                }
+            }
+        }
+
+
+
+        @media all and (min-width: $desktop) {
+            padding-bottom: 60px;
+
+            .category-boxes {
+                width: 14.28%;
+
+                a {
+                    padding: 23px 35px 22px !important;
+
+                    .image-wrap {
+                        height: 60px;
+                        margin-bottom: 13px;
+                    }
+                }
+
+                &:nth-child(5n) {
+                    border-right: 1px solid #E2E2E2;
+                    border-radius: 0;
+
+                    &:hover {
+                        border-radius: 6px;
+                        border-right: 1px solid #111e6c;
+                    }
+                }
+
+                &:nth-child(7n) {
+                    border-right: 1px solid #E2E2E2;
+
+                    &:hover {
+                        border-right: 1px solid #111e6c;
+                    }
+                }
+
+                &:nth-child(7) {
+                    border-radius: 0 6px 0 0;
+
+                    &:hover {
+                        border-radius: 6px;
+
+                    }
+                }
+            }
+        }
+
+        @media all and (min-width:$desktop) {
+            .category-title {
+                @include fontsize(16px);
+            }
+        }
+
+        @media all and (min-width:$r-des-1350) {
+            .category-boxes {
+                width: 12.5%;
+
+                &:nth-child(7n) {
+                    border-right: 1px solid #E2E2E2;
+                    border-radius: 0;
+
+                    &:hover {
+                        border-radius: 6px;
+                        border-right: 1px solid #111e6c;
+                    }
+                }
+
+                &:nth-child(8n) {
+                    border-right: 1px solid #E2E2E2;
+
+                    &:hover {
+                        border-right: 1px solid #111e6c;
+                    }
+                }
+
+                &:nth-child(8) {
+                    border-radius: 0 6px 0 0;
+
+                    &:hover {
+                        border-radius: 6px;
+
+                    }
+                }
+
+                &:nth-child(5n) {
+                    border-right: 1px solid #E2E2E2;
+                    border-radius: 0;
+
+                    &:hover {
+                        border-radius: 6px;
+                        border-right: 1px solid #111e6c;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:767px) {
+    .featured-category {
+        &.feature-cat {
+            &.category-page-feature {
+                .container {
+                    padding: 0;
+                    padding-left: 15px;
+                }
+
+                .categories-wrap {
+                    overflow: auto;
+                }
+
+                .categories-lists {
+                    &.categroies-mobile {
+                        display: flex;
+                        flex-wrap: nowrap;
+
+                        .category-boxes {
+                            width: 30%;
+                            flex-shrink: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.category-page-feature {
+    &.trending-cat {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 35px;
+        margin-bottom: 0;
+    }
+
+    @media all and (min-width:$small-medium) {
+        &.trending-cat {
+            border-bottom: 0;
+
+            .container {
+                border-bottom: 1px solid #ddd;
+            }
+
+            padding-bottom: 0;
+            margin-bottom: 35px;
+        }
+    }
+}
+
+@media all and (min-width:$desktop) {
+    .category-breadcum {
+        .container {
+            padding: 0;
+        }
+    }
+
+    .category-discount-block {
+        .container {
+            padding: 0;
+        }
+    }
+
+    .category-page-feature {
+        .container {
+            padding: 0;
+        }
+    }
+
+    .super-cat-trending {
+        .container {
+            padding: 0;
+        }
+    }
+
+    // .new-top-brands {
+    //     .container {
+    //         padding: 0;
+    //     }
+    // }
+
+    // .best-car-accessories {
+    //     .container {
+    //         padding: 0;
+    //     }
+    // }
+}

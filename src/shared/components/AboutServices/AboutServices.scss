@@ -1,0 +1,152 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.about-services {
+  padding: 30px 0;
+
+  @media all and (max-width:767px) {
+    padding: 24px 0;
+  }
+
+
+  @media screen and (min-width: $r-1300) {
+    padding: 63px 0 60px;
+  }
+
+  .container {
+    @media all and (max-width:767px) {
+      padding: 0 18px;
+    }
+
+    @include flex-property(flex, initial, space-between);
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $small-medium) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 40px;
+    }
+
+    .service-wrap {
+      display: flex;
+      align-items: center;
+      width: 47%;
+      margin-bottom: 25px;
+
+      @media all and (max-width:767px) {
+        // align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1.2px solid #E8E8E8;
+        border-radius: 5px;
+        margin-bottom: 0;
+        width: calc(33.33% - 7px);
+        margin-right: 10px;
+        padding: 5px 10px 8px;
+        min-height: 81px;
+
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          display: none;
+        }
+
+        .service-title {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: $small-medium) {
+        width: auto;
+      }
+
+      img {
+        max-width: 26px;
+
+        @media all and (max-width:767px) {
+          // margin-bottom: 15px;
+          margin: 7px 5px 8px 5px;
+        }
+
+        @media screen and (min-width:768px) {
+          margin-right: 8px;
+        }
+
+        @media screen and (min-width: $medium) {
+          max-width: 34px;
+        }
+
+        @media screen and (min-width: $desktop) {
+          max-width: 36px;
+          margin-right: 12px;
+        }
+
+        @media screen and (min-width: $r-1300) {
+          max-width: 100%;
+        }
+      }
+
+      .content-wrap {
+        text-transform: $capitalize;
+
+        @media screen and (min-width: $small-medium) {
+          max-width: 197px;
+        }
+
+        h3 {
+          font-weight: $fw-700;
+          @include fontsize(12px);
+          color: $text-color;
+          line-height: 1.21;
+          margin-bottom: 7px;
+
+          @media all and (max-width:767px) {
+            margin-bottom: 0;
+            text-align: center;
+            font-weight: $fw-semibold;
+            color: $black;
+          }
+
+          @media all and (min-width:768px) {
+            white-space: nowrap;
+          }
+
+          @media screen and (min-width: $medium) {
+            @include fontsize(14px);
+          }
+
+          // @media screen and (min-width: $r-1300) {
+          //   @include fontsize(16px);
+          //   margin-bottom: 14px;
+          // }
+
+          @media screen and (min-width: $desktop) {
+            @include fontsize(15.5556px);
+          }
+        }
+
+        .service-title {
+          @include fontsize(12px);
+          font-weight: $fw-medium;
+          color: rgba(51, 51, 51, 0.8);
+
+          @media screen and (min-width: $medium) {
+            @include fontsize(12px);
+          }
+
+          @media screen and (min-width: $desktop) {
+            @include fontsize(14.4445px);
+          }
+
+          @media screen and (min-width: $r-1300) {
+            // @include fontsize(14px);
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+}

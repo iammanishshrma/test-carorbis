@@ -1,0 +1,369 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.address-list {
+    margin-bottom: 25px;
+
+    @media all and (max-width:767px) {
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        margin-bottom: 0;
+        letter-spacing: 0.3px;
+
+        @media all and (max-width:767px) {
+            color: #000;
+            @include fontsize(12px);
+            font-weight: $fw-700;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.cart-address-block {
+    padding: 25px 0;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    border-bottom: 1px solid $light-gray03;
+
+    @media all and (max-width:767px) {
+        margin: 0 -15px;
+        padding: 25px 15px;
+    }
+
+    .delete-btn {
+        .icon-delete {
+            background: url(../../assets/images/delete-wishlist.svg) no-repeat;
+            width: 16px;
+            height: 18px;
+            background-size: 16px auto;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .edit-desk-btn {
+        margin-right: 15px;
+
+        @media all and (min-width:$small-medium) {
+            margin-right: 20px;
+        }
+
+        .icon-edit {
+            background: url(../../assets/images/edit.svg) no-repeat;
+            width: 16px;
+            height: 18px;
+            background-size: 16px auto;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    //delivery-address
+    .address-action-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        position: relative;
+        z-index: 3;
+
+        @media all and (min-width:$small-medium) {
+            .delievry-notification {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+
+        .delievry-notification {
+            display: flex;
+        }
+
+        .deliver-address {
+            font-family: $primary-fontfamily;
+            font-style: normal;
+            font-weight: 500;
+            @include fontsize(13px);
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            color: #045130;
+            background: #D6F3E9;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 10px;
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(15.5556px);
+            }
+        }
+
+        @media all and (min-width:768px) {
+            .desk-edit-btn {
+                position: absolute;
+                right: 0;
+                top: 100%;
+
+            }
+        }
+    }
+
+    @media all and (max-width:767px) {
+        .edit-btn {
+            margin-top: 0 !important;
+        }
+
+        padding-bottom: 30px;
+        display: block;
+
+        &:first-of-type {
+            padding-top: 0;
+        }
+    }
+
+    .address-content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .address-checkbox {
+        margin-right: 12px;
+        margin-top: 5px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $navy;
+            border-radius: 50%;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .input-address {
+        position: relative;
+        width: 100%;
+    }
+
+    .checkbox-circle {
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        position: relative;
+        border: 6px solid $white;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+
+    }
+
+    .address-text {
+        @media all and (max-width:768px) {
+            width: 100%;
+        }
+
+        .address-data {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+
+            @media all and (max-width:767px) {
+                justify-content: space-between;
+            }
+        }
+
+        h3 {
+            margin-bottom: 0;
+            margin-right: 10px;
+            @include fontsize(13px);
+            letter-spacing: 0.3px;
+
+            @media all and (min-width:768px) {
+                @include fontsize(16px);
+            }
+
+            @media all and (max-width:767px) {
+                @include fontsize(14px);
+                font-weight: $fw-semibold;
+                color: $black;
+            }
+
+        }
+
+        .location-add-wrp {
+            .location-address {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            .mobile-number-wrp {
+                display: none;
+            }
+
+            @media all and (min-width:$small-medium) {
+                max-width: 250px;
+            }
+        }
+
+        .location-address {
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+            margin-bottom: 10px;
+
+            @media all and (max-width:767px) {
+                max-width: 215px;
+                color: #6A6B6B;
+                @include fontsize(14px);
+                font-weight: $fw-medium;
+            }
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(16px);
+            }
+        }
+
+        .mob-number {
+            margin-bottom: 8px;
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(16px)
+            }
+        }
+
+        .icon-address {
+            background: url(../../assets/images/icon-cart-location.svg) no-repeat;
+            display: block;
+            width: 12px;
+            height: 15px;
+            background-size: 12px auto;
+            margin-right: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-number-wrp {
+            color: #6A6B6B;
+            font-weight: $fw-medium;
+            @include fontsize(14px);
+
+            @media all and (min-width:$small-medium) {
+                @include fontsize(16px);
+            }
+
+            .mob-number {
+                margin-bottom: 0;
+                font-weight: $fw-semibold;
+                color: $black;
+                margin-left: 4px;
+                @include fontsize(14px);
+
+                @media all and (min-width:$small-medium) {
+                    @include fontsize(16px);
+                }
+
+            }
+        }
+    }
+
+    .address-place {
+        color: #667085;
+        border: 1px solid #667085;
+        border-radius: 25px;
+        padding: 6px 9px;
+        font-weight: $fw-medium;
+
+        @media all and (max-width:767px) {
+            color: #667085;
+            border: 1px solid #667085;
+            border-radius: 25px;
+            @include fontsize(12px);
+        }
+    }
+
+    .address-radio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+
+        &:checked {
+            ~.address-content {
+
+                .checkbox-circle {
+                    background-color: $navy;
+                }
+
+                .address-text {
+                    .location-add-wrp {
+                        .location-address {
+
+                            display: block;
+                        }
+
+                        .mobile-number-wrp {
+                            display: block;
+                        }
+                    }
+
+                    @media all and (max-width:767px) {
+                        .delete-btn {
+                            &.desk-hide {
+                                margin-right: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .edit-btn {
+        @include fontsize(12px);
+        text-transform: uppercase;
+        margin-top: 10px;
+        transition: none;
+        border: 0.5px solid #020202;
+        font-family: $primary-fontfamily;
+        font-style: normal;
+        font-weight: $fw-semibold;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        color: #000000;
+        border-radius: 4px;
+        padding: 4px 10px;
+        min-width: 52px;
+
+        &:hover {
+            color: $black;
+            background-color: $gray02;
+            border: 0.5px solid transparent;
+        }
+
+        @media all and (min-width:$small-medium) {
+            margin-top: 0;
+            @include fontsize(16px);
+        }
+    }
+}

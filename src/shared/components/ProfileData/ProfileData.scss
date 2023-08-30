@@ -1,0 +1,24 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.rgt-account {
+  @media all and (min-width: $medium-992) {
+    width: calc(100% - 336px);
+  }
+
+  @media all and (min-width: $desktop) {
+    width: calc(100% - 380px);
+  }
+
+  .account-form {
+    h3 {
+      @include fontsize(18px);
+      color: $text-color;
+      margin-bottom: 20px;
+
+      @media all and (min-width: $small-medium) {
+        @include fontsize(22px);
+      }
+    }
+  }
+}

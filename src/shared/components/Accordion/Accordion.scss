@@ -1,0 +1,17 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.accordion-wrapper {
+  h4 {
+    @include fontsize(16px);
+    margin-bottom: 15px;
+
+    @media all and (min-width:768px) {
+      @include fontsize(18px);
+    }
+
+    @media all and (min-width:$desktop) {
+      @include fontsize(22.2222px);
+    }
+  }
+}

@@ -1,0 +1,333 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.new-search-header {
+    position: relative;
+    padding-top: 82px;
+
+    .popup-search-header {
+        display: flex;
+        padding: 20px 10px 20px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999999;
+        background: #fff;
+        box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+
+        .search-back {
+            margin-right: 15px;
+        }
+    }
+
+    .search-wrap {
+        @include flex-property(flex, center, space-between);
+        margin-bottom: 15px;
+
+        @media all and (max-width:767px) {
+            margin-bottom: 13px;
+        }
+
+        @media screen and (min-width:$small-medium) {
+            width: 50%;
+            margin-bottom: 0;
+
+        }
+
+        @media screen and (min-width:$medium) {
+            width: 60%;
+        }
+
+        @media screen and (min-width:$r-1300) {
+            width: 62%;
+        }
+
+
+
+        .search-header {
+            height: 42px;
+            background: $white;
+            @include flex-property(flex, center, space-between);
+            @include border (2px, solid, $navy);
+            @include radius(6px);
+            padding: 0 6px;
+            position: relative;
+            z-index: 99;
+            width: 100%;
+
+            @media screen and (min-width:$small-medium) {
+                width: 63%;
+                height: 49px;
+                @include border (2.5px, solid, $navy);
+                @include radius(5px);
+            }
+
+            @media screen and (min-width:$medium) {
+                width: 100%;
+            }
+
+            @media screen and (min-width:$desktop) {
+                height: 60px;
+                padding: 0 21px 0 12px;
+            }
+
+
+
+            .search-icon {
+                position: relative;
+
+                input {
+                    background: url("../../../assets/images/search-icon.svg") no-repeat;
+                    border: 0;
+                    @include fontsize(0px);
+                    height: 16px;
+                    width: 15px;
+                    background-size: contain;
+
+                    @media screen and (min-width:$desktop) {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .list {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #ffffff;
+        padding: 0 0;
+        margin-top: 3px;
+        border-top: 0;
+
+        .recent-search-wrpper {
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .recent-search-list {
+            display: flex;
+            min-width: 420px;
+            margin: 10px;
+
+            li {
+                margin-right: 5px;
+                border-radius: 50px;
+                width: auto;
+                border: 1px solid #e8e8e8;
+                padding: 7px 10px;
+                font-size: 14px;
+                justify-content: center;
+                min-width: 90px;
+                margin-bottom: 15px;
+                flex-shrink: 0;
+
+                @media all and (min-width:768px) {
+                    font-size: 12px;
+                }
+
+                &:last-child {
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 12px;
+
+            @media all and (min-width:768px) {
+                font-size: 13px;
+                margin: 0;
+            }
+        }
+
+        li {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 0;
+            background-color: #fff;
+            color: rgb(48, 54, 60);
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            border: 1px solid transparent;
+
+            @media all and (min-width:768px) {
+                padding: 10px 20px;
+            }
+
+            &:last-child {
+                border-radius: 0 0 10px 10px;
+            }
+
+
+            &:hover,
+            &.listItemActive {
+                background-color: $gray02;
+                color: $black;
+                border: 1px solid transparent;
+
+                .cross-btn {
+                    background-color: transparent;
+
+                    .icon-cross {
+                        background: url(../../../assets/images/icon-remove.svg) no-repeat;
+                        height: 11px;
+                        width: 11px;
+                        background-size: 11px auto;
+                        display: block;
+                        margin: 0;
+                        filter: brightness(2);
+                    }
+                }
+            }
+        }
+
+        .cross-btn {
+            .icon-cross {
+                background: url(../../../assets/images/icon-remove.svg) no-repeat;
+                height: 11px;
+                width: 11px;
+                background-size: 11px auto;
+                display: block;
+                margin: 0;
+            }
+        }
+    }
+
+    .select-box {
+        position: relative;
+
+        .p-dropdown {
+            &::after {
+                @include after(8px, 4.5px);
+                background: url("../../../assets/images/down-arrow.svg") no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 4px;
+                right: 0;
+
+                @media screen and (min-width:$small-medium) {
+                    top: 7px;
+                }
+
+                @media screen and (min-width:$desktop) {
+                    width: 10px;
+                    height: 6px;
+                }
+            }
+        }
+
+        .p-dropdown-label {
+            font-family: $primary-fontfamily;
+            font-weight: $fw-medium;
+            @include fontsize(11px);
+            color: $text-color;
+            text-transform: capitalize;
+            border: 0;
+            padding: 0 12.5px 0 0;
+            background-color: transparent;
+            line-height: 1.3;
+
+            @media screen and (min-width:$small-medium) {
+                @include fontsize(14px);
+            }
+
+            @media screen and (min-width:$desktop) {
+                @include fontsize(16px);
+                padding-right: 15.5px;
+            }
+        }
+
+        .p-dropdown .p-dropdown-trigger {
+            width: auto;
+        }
+    }
+
+    .search-input {
+        width: 80%;
+        position: relative;
+        z-index: 1;
+
+
+        .p-autocomplete {
+            width: 100%;
+        }
+
+        .p-inputtext {
+            color: $text-color !important;
+            font-size: 14px !important;
+            font-family: $primary-fontfamily;
+
+            @media screen and (min-width:$medium) {
+                font-size: 16px !important;
+            }
+
+
+            &:enabled {
+                &:focus {
+                    border: 0;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        @media screen and (min-width:$medium) {
+            width: 90%;
+        }
+
+        input[type=text] {
+            width: 100%;
+            color: $text-color !important;
+            font-weight: $fw-regular;
+            @include fontsize(11px);
+            line-height: 1.3;
+            border: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 0 12px;
+
+            &::placeholder {
+                color: rgba(51, 51, 51, 0.4);
+            }
+
+            @media screen and (min-width:$small-medium) {
+                @include fontsize(14px);
+                font-family: $primary-fontfamily;
+            }
+
+            @media screen and (min-width:$medium) {
+                padding: 0 20px;
+            }
+        }
+    }
+
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.listItem {
+    width: 200px;
+    background: rgba(255, 0, 0, 0.178);
+    margin-bottom: 5px;
+}
+
+.listItemActive {
+    background: red;
+}

@@ -1,0 +1,61 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+@media all and (max-width:767px) {
+    .featured-category {
+        &.feature-cat {
+            .category-boxes {
+                a {
+                    padding: 15px 15px !important;
+
+                    .image-wrap {
+                        height: 72px;
+                        margin-bottom: 10px;
+
+                        img {
+                            transform: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .top-brands {
+        &.featured-category {
+            &.new-top-brands {
+                .homepage-top-brand {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-column-gap: 15px;
+                    overflow-x: visible;
+                    margin: 0;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+.search-categories {
+    &.select-filter-wrapper {
+        @media all and (max-width:767px) {
+            .search-filter {
+                .select-boxes-wrap {
+                    .p-dropdown {
+                        margin-bottom: 12px;
+
+                        &:last-of-type {
+                            @media all and (max-width:767px) {
+                                margin-bottom: 14px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

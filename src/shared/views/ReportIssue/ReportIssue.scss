@@ -1,0 +1,22 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+
+.report-issue {
+    .form-wrap {
+        @media all and (min-width:$small-medium) {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+        h2 {
+            @include fontsize(20px);
+
+            @media all and (min-width:$small-medium) {
+                @include fontsize(30px);
+            }
+        }
+    }
+}

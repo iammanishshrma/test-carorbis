@@ -1,0 +1,20 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+.media-login-wrapper{
+	.facebook{
+		margin-left: 5px;
+		border: 1px solid #dadce0;
+		width: 40px;
+		height: 40px;
+		display: flex!important;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+		.icon-fb{
+			width: 28px!important;
+			height: 30px!important;
+			background-size: contain!important;
+
+		}
+	}
+}

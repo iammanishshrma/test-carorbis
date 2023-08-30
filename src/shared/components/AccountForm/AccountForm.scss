@@ -1,0 +1,154 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.account-form-wrap {
+  padding: 25px 12px;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+
+  @media all and (max-width:767px) {
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  @media all and (min-width: $small-medium) {
+    padding: 50px 24px;
+  }
+
+  .form-wrap {
+    @media all and (min-width: $desktop) {
+      width: 50%;
+    }
+  }
+
+  .form-block {
+    margin-bottom: 26px;
+    position: relative;
+
+    &.add-profile {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      // border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      margin-bottom: 35px;
+      border: 2px solid #DFDFDF;
+
+      &.edit:after {
+        content: "";
+        position: absolute;
+        right: 5px;
+        background: url(../../assets/images/add-profile.png) no-repeat;
+        height: 35px;
+        width: 35px;
+        background-size: 35px auto;
+        bottom: 5px;
+      }
+
+      .image-input {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        cursor: pointer;
+
+        &:disabled {
+          cursor: default;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    padding: 13px;
+    color: $text-color;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: 2px solid #0d1e70 !important;
+    }
+
+    &:disabled {
+      background-color: #f1f2f4;
+      color: rgba(0, 0, 0, 0.8);
+      @include fontsize(16px);
+    }
+  }
+
+  .input-label {
+    color: #000;
+    @include fontsize(16px);
+    font-weight: $fw-semibold;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .form-btn {
+    background-color: $navy;
+    color: $white;
+    font-weight: $fw-bold;
+    padding: 13px 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    border-radius: 6px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+    // transition: all 0.1s;
+    transition: none;
+    cursor: pointer;
+    @include fontsize(16px);
+
+    @media all and (min-width: $small-medium) {
+      max-width: 248px;
+    }
+
+    @media all and (min-width: $medium) {
+      @include fontsize(20px);
+    }
+
+    &:hover {
+      background-color: $gray02;
+      color: $black;
+      border: 1px solid transparent;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: 1px solid transparent;
+    }
+  }
+
+  .error-field {
+    position: relative;
+  }
+
+  .verified-number {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 22px;
+    color: $green;
+    @include fontsize(16px);
+    font-weight: $fw-semibold;
+  }
+}

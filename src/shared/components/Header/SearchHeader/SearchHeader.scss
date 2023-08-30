@@ -1,0 +1,446 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.search-wrap {
+    @include flex-property(flex, center, space-between);
+    margin-bottom: 15px;
+    margin-right: 15px;
+    min-height: 42px;
+
+    &.normal-search {
+        @media all and (max-width:767px) {
+            padding-bottom: 15px;
+        }
+    }
+
+    &.search-head-wrap {
+        @media all and (max-width:767px) {
+            margin-right: 0px;
+        }
+    }
+
+    @media all and (max-width:767px) {
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    @media screen and (min-width:$small-medium) {
+        width: 50%;
+        margin-bottom: 0;
+
+    }
+
+    @media screen and (min-width:$medium) {
+        width: 60%;
+    }
+
+    @media screen and (min-width:$r-1300) {
+        width: 62%;
+    }
+
+
+
+    .sticky-search {
+        display: none;
+    }
+
+
+    .search-header {
+        height: 44px;
+        background: $white;
+        @include flex-property(flex, center, space-between);
+        @include border (2px, solid, $navy);
+        @include radius(6px);
+        padding: 0 6px;
+        position: relative;
+        z-index: 99;
+        width: 100%;
+
+        @media screen and (min-width:$small-medium) {
+            width: 63%;
+            height: 49px;
+            @include border (2.5px, solid, $navy);
+            @include radius(5px);
+        }
+
+        @media screen and (min-width:$medium) {
+            width: 100%;
+        }
+
+        @media screen and (min-width:$desktop) {
+            height: 50px;
+            padding: 0 21px 0 12px;
+        }
+
+
+
+        .list {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            padding: 0 0;
+            border-radius: 0 0 10px 10px;
+            margin-top: 3px;
+            border: 1px solid #e8e8e8;
+            border-top: 0;
+
+            .recent-search-wrpper {
+                overflow: auto;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                @media all and (min-width:$small-medium) {
+                    overflow: visible;
+                }
+            }
+
+            .recent-search-list {
+                display: flex;
+                max-width: 350px;
+                margin: 10px;
+
+                @media all and (min-width:$small-medium) {
+                    margin: 15px 10px;
+                    max-width: none;
+                    flex-wrap: wrap;
+                }
+
+                @media all and (min-width:$small-medium) {
+                    margin: 21px 10px 9px;
+                }
+
+                li {
+                    margin-right: 8px;
+                    border-radius: 20px;
+                    border: 1px solid #e8e8e8;
+                    padding: 7px 10px;
+                    font-size: 10px;
+                    justify-content: center;
+                    min-width: 90px;
+                    flex-shrink: 0;
+
+                    @media all and (min-width:$small-medium) {
+                        font-size: 12px;
+                        width: auto;
+                        margin-bottom: 12px;
+                        padding: 8px 10px;
+                    }
+
+                    @media all and (min-width:$desktop) {
+                        @include fontsize(15.5556px);
+                    }
+                }
+            }
+
+            h3 {
+                opacity: 0.7;
+                @include fontsize(12px);
+                margin: 0;
+                color: #000;
+                font-weight: 400;
+                padding: 10px 12px;
+                background-color: rgb(238, 244, 255);
+
+                @media all and (min-width:768px) {
+                    @include fontsize(13px);
+                    margin: 0;
+                    padding: 14.3px 12px;
+                    font-weight: $fw-semibold;
+                }
+
+                @media all and (min-width:$desktop) {
+                    @include fontsize(15.5556px);
+                }
+            }
+
+            li {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 0;
+                background-color: #fff;
+                color: rgb(48, 54, 60);
+                font-weight: 500;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                border: 1px solid transparent;
+
+                @media all and (min-width:768px) {
+                    padding: 10px 20px;
+                }
+
+                &:hover,
+                &.listItemActive {
+                    background-color: $gray02;
+                    color: $black;
+                    border: 1px solid transparent;
+
+                    .cross-btn {
+                        background-color: transparent;
+
+                        .icon-cross {
+                            background: url(../../../assets/images/bd-arrow.svg) no-repeat;
+                            height: 12px;
+                            width: 7px;
+                            background-size: 7px auto;
+                            display: block;
+                            margin: 0;
+                            filter: brightness(0);
+                        }
+                    }
+                }
+            }
+
+            .cross-btn {
+                .icon-cross {
+                    background: url(../../../assets/images/bd-arrow.svg) no-repeat;
+                    height: 12px;
+                    width: 7px;
+                    background-size: 7px auto;
+                    display: block;
+                    margin: 0;
+                }
+            }
+
+            @media all and (max-width:767px) {
+                position: fixed;
+                top: 85px;
+                left: 0;
+                width: 100%;
+                border: 0;
+                box-shadow: none;
+            }
+        }
+
+        .select-box {
+            position: relative;
+
+            .p-dropdown {
+                &::after {
+                    @include after(8px, 4.5px);
+                    background: url("../../../assets/images/down-arrow.svg") no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    top: 4px;
+                    right: 0;
+
+                    @media screen and (min-width:$small-medium) {
+                        top: 7px;
+                    }
+
+                    @media screen and (min-width:$desktop) {
+                        width: 10px;
+                        height: 6px;
+                    }
+                }
+            }
+
+            .p-dropdown-label {
+                font-family: $primary-fontfamily;
+                font-weight: $fw-medium;
+                @include fontsize(11px);
+                color: $text-color;
+                text-transform: capitalize;
+                border: 0;
+                padding: 0 12.5px 0 0;
+                background-color: transparent;
+                line-height: 1.3;
+
+                @media screen and (min-width:$small-medium) {
+                    @include fontsize(14px);
+                }
+
+                @media screen and (min-width:$desktop) {
+                    @include fontsize(16px);
+                    padding-right: 15.5px;
+                }
+            }
+
+            .p-dropdown .p-dropdown-trigger {
+                width: auto;
+            }
+        }
+
+        .search-input {
+            width: 80%;
+            position: relative;
+            z-index: 1;
+
+            .p-autocomplete {
+                width: 100%;
+            }
+
+            .p-inputtext {
+                color: $text-color !important;
+
+                @media screen and (max-width:767px) {
+                    font-size: 14px !important;
+                }
+
+                @media screen and (min-width:$medium) {
+                    font-size: 16px !important;
+                }
+
+
+                &:enabled {
+                    &:focus {
+                        border: 0;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            @media screen and (min-width:$medium) {
+                width: 90%;
+            }
+
+            input[type=text] {
+                width: 100%;
+                color: $text-color !important;
+                font-weight: $fw-regular;
+                @include fontsize(11px);
+                line-height: 1.3;
+                border: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding: 0 12px;
+
+                &::placeholder {
+                    color: rgba(51, 51, 51, 0.4);
+                }
+
+                @media screen and (min-width:$small-medium) {
+                    @include fontsize(14px);
+                }
+
+                @media screen and (min-width:$medium) {
+                    padding: 0 20px;
+                }
+            }
+
+            &.search-input-new {
+                input[type=text] {
+                    @media all and (min-width: $desktop) {
+                        font-size: 14px !important;
+                        font-family: $primary-fontfamily;
+                    }
+                }
+            }
+        }
+
+        .search-icon {
+            position: relative;
+
+            input {
+                background: url("../../../assets/images/search-icon.svg") no-repeat;
+                border: 0;
+                @include fontsize(0px);
+                height: 20px;
+                width: 20px;
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 7px;
+            }
+        }
+    }
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.listItem {
+    width: 200px;
+    background: rgba(255, 0, 0, 0.178);
+    margin-bottom: 5px;
+}
+
+.listItemActive {
+    background: red;
+}
+
+.mobile-popup-icon {
+    display: none;
+}
+
+@media all and (max-width:767px) {
+    .mobile-popup-icon {
+        display: block;
+        position: absolute;
+        top: 33px;
+        left: 20px;
+
+        .icon-arrow {
+            background: url(../../../assets/images/bck-arrow-new.svg) no-repeat;
+            width: 20px;
+            height: 17px;
+            background-size: 20px auto;
+        }
+    }
+}
+
+@media all and (max-width:767px) {
+    .search-header-mobile {
+        width: 100%;
+    }
+
+    .frequent-search-wrpper {
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .frequent-search-list {
+        display: flex;
+        max-width: 350px;
+        margin: 10px;
+
+        @media all and (min-width:$small-medium) {
+            margin: 15px 10px;
+            max-width: none;
+            flex-wrap: wrap;
+        }
+
+        @media all and (min-width:$small-medium) {
+            margin: 21px 10px 9px;
+        }
+
+        li {
+            margin-right: 8px;
+            border-radius: 20px;
+            border: 1px solid #e8e8e8 !important;
+            padding: 7px 10px;
+            font-size: 10px;
+            min-width: 90px;
+            flex-shrink: 0;
+            justify-content: center !important;
+
+            .cross-btn {
+                display: none !important;
+            }
+
+            @media all and (min-width:$small-medium) {
+                font-size: 12px;
+                width: auto;
+                margin-bottom: 12px;
+                padding: 8px 10px;
+            }
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(15.5556px);
+            }
+        }
+    }
+}

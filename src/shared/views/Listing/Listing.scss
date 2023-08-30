@@ -1,0 +1,885 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.product-listing {
+  .product-details {
+    @media all and (min-width: $small-medium) {
+      width: calc(100% - 270px);
+    }
+
+    @media all and (min-width: $medium) {
+      width: calc(100% - 280px);
+    }
+
+    @media all and (min-width: $medium) {
+      width: calc(100% - 305px);
+    }
+  }
+}
+
+.product-details {
+  h1 {
+    font-family: $primary-fontfamily;
+    font-weight: $fw-bold;
+    color: $text-color;
+    line-height: 1;
+    @include fontsize(20px);
+    text-transform: $capitalize;
+    margin-bottom: 10px;
+
+    @media all and (max-width:767px) {
+      @include fontsize(16px);
+    }
+  }
+
+  p {
+    font-family: $primary-fontfamily;
+    font-weight: $fw-regular;
+    color: $black;
+    @include fontsize(15px);
+    line-height: 1.5;
+    margin-bottom: 30px;
+
+    @media all and (max-width:767px) {
+      @include fontsize(14px);
+      margin-bottom: 14px;
+    }
+
+    @media all and (min-width:$desktop) {
+      @include fontsize(15.5556px);
+      margin-bottom: 19px;
+      color: #4A5568;
+    }
+  }
+
+  .product-blocks {
+    margin-bottom: 25px;
+  }
+
+  .product-discount {
+    margin-bottom: 15px;
+
+    @media all and (max-width:767px) {
+      margin-bottom: 10px;
+    }
+
+    .discount-categories-lists {
+      display: $block;
+      padding: 0 20px;
+
+      @media all and (min-width:$small-medium) {
+        padding: 0;
+      }
+
+      @media all and (max-width:767px) {
+        padding: 0;
+        margin: 0 -15px;
+        // padding-left: 15px;
+      }
+
+      position: relative;
+
+      .slick-slider {
+        overflow: hidden;
+        position: static;
+        border-radius: 5px;
+
+        @media all and (max-width:767px) {
+          border-radius: 0;
+        }
+
+        .slick-arrow {
+          &.slick-prev {
+            position: absolute;
+            left: -5px;
+            border-radius: 50%;
+            z-index: 2;
+            transform: rotate(180deg);
+            top: 43%;
+
+            @media all and (min-width: $small-medium) {
+              left: -15px;
+            }
+
+            @media all and (min-width: $desktop) {
+              left: -22px;
+            }
+
+
+            &.slick-disabled {
+              display: none !important;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              background: url(../../assets/images/slider-arrow.svg) no-repeat center/cover;
+              height: 15px;
+              width: 8px;
+              background-size: 8px auto;
+              top: 50%;
+              transform: translateY(-50%);
+              display: block;
+              opacity: 1;
+            }
+          }
+
+          &.slick-next {
+            position: absolute;
+            right: -5px;
+            border-radius: 50%;
+            z-index: 2;
+            top: 46%;
+
+            @media all and (min-width: $small-medium) {
+              right: -22px;
+            }
+
+            &.slick-disabled {
+              display: none !important;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              background: url(../../assets/images/slider-arrow.svg) no-repeat center/cover;
+              height: 15px;
+              width: 8px;
+              background-size: 8px auto;
+              top: 50%;
+              transform: translateY(-50%);
+              display: block;
+              opacity: 1;
+            }
+          }
+        }
+
+        .slick-list {
+          margin-left: -100%;
+
+          @media screen and (min-width: $small-medium) {
+            margin-left: -53%;
+          }
+        }
+
+        .about-discount {
+          margin-bottom: 0;
+
+          @media all and (max-width:767px) {
+            margin-right: 10px !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.listing-page-right {
+    .discount-categories {
+      .discount-categories-lists {
+        .about-discount {
+          a {
+            img {
+              border-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.main-wrapper {
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $small-medium) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  @media all and (max-width:767px) {
+    .apply-btn {
+      font-weight: 400;
+      @include fontsize(14px);
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      position: fixed;
+      bottom: 0;
+      z-index: 999;
+      left: 0;
+      padding: 16px;
+      width: 50%;
+      justify-content: center;
+      border: 1px solid #e8e8e8;
+      border-right: 0;
+      height: 55px;
+
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+        width: 1px;
+        background-color: #e8e8e8;
+      }
+
+      .icon-filter {
+        background: url(../../assets/images/apply-filter.svg);
+        width: 15px;
+        height: 15px;
+        background-size: 15px auto;
+        display: block;
+        margin-right: 6px;
+        margin-top: 0;
+      }
+
+      &.full-apply {
+        width: 100%;
+      }
+    }
+  }
+
+  @media all and (min-width:768px) {
+    .apply-btn {
+      display: none;
+    }
+  }
+
+  .ltl-wrapper {
+    background: $white;
+    border: 1px solid $white-secondary;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.03);
+    border-radius: 6px;
+    margin-bottom: 30px;
+
+    @media all and (min-width:$small-medium) {
+      position: sticky;
+      top: 130px;
+      left: 0;
+      // height: calc(100vh - 300px) !important;
+    }
+
+    @media all and (max-width:767px) {
+
+
+      .filter-data {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .apply-filter {
+        background: $navy;
+        position: sticky;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        width: 100%;
+        padding: 15px 20px;
+        z-index: 99999999;
+        font-weight: 700;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: auto;
+
+        &:hover {
+          background-color: $gray02;
+          color: $black;
+        }
+      }
+
+      .filter-bck {
+        .icon-bck {
+          background: url(../../assets/images/bck-arrow-new.svg) no-repeat;
+          height: 12px;
+          width: 16px;
+          background-size: 16px auto;
+          margin-right: 10px;
+        }
+      }
+
+      .filter-box {
+        border-bottom: 0;
+
+        .range-type {
+          .price {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .filter-head {
+        background: #e8e8e87a;
+        padding: 26px 15px;
+        display: flex;
+        border-bottom: 1px solid #e8e8e8;
+        justify-content: space-between;
+
+        @media all and (max-width:767px) {
+          background-color: $white;
+        }
+
+        .filter-bck {
+          background-color: transparent;
+          font-weight: 700;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+        }
+
+        .clear-all {
+          background-color: transparent;
+          font-weight: 700;
+          font-size: 16px;
+          color: #AA4A44;
+        }
+      }
+
+      &.filter-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        z-index: 9999999;
+      }
+
+      .filter-main-wrp {
+        display: flex;
+        height: 100%;
+      }
+
+      .left-head-filter {
+        background-color: #e8e8e87a;
+        border-right: 1px solid #e8e8e8;
+
+        >div {
+          height: calc(100vh - 72px) !important;
+          overflow-y: auto !important;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          >div {
+            margin: 0 !important;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
+        }
+
+        h4 {
+          font-weight: bold;
+          font-size: 14px;
+          margin-bottom: 0;
+          padding: 25px 8px;
+          display: flex;
+          align-items: center;
+
+          .icon-arrow {
+            background: url(../../assets/images/bd-arrow.svg);
+            height: 12px;
+            width: 7px;
+            background-size: 7px auto;
+            margin-left: 10px;
+            display: none;
+          }
+
+          &.active {
+            background: white;
+
+            .icon-arrow {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    @media all and (min-width:768px) {
+      .left-head-filter {
+        display: none;
+      }
+    }
+
+    @media all and (min-width: $small-medium) {
+      width: 245px;
+    }
+
+    @media all and (min-width: $medium) {
+      width: 268px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.brands-wrap {
+  @media all and (max-width:767px) {
+    overflow-x: auto;
+    display: flex;
+    margin: 0 -15px;
+    padding-left: 15px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .slick-arrow {
+    &.slick-prev {
+      background-color: $color-gray;
+      height: 38px;
+      width: 38px;
+      position: absolute;
+      left: -9px;
+      border-radius: 50%;
+      z-index: 2;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      @media all and (min-width: $small-medium) {
+        height: 48px;
+        width: 48px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: url(../../assets/images/arrow-icon-right.svg) no-repeat center/cover;
+        height: 15px;
+        width: 8px;
+        background-size: 8px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        opacity: 1;
+
+        @media all and (min-width: $small-medium) {
+          height: 24px;
+          width: 13px;
+          background-size: 13px auto;
+        }
+      }
+    }
+
+    &.slick-next {
+      background-color: $color-gray;
+      height: 38px;
+      width: 38px;
+      position: absolute;
+      right: -9px;
+      border-radius: 50%;
+      z-index: 2;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      @media all and (min-width: $small-medium) {
+        height: 48px;
+        width: 48px;
+      }
+
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: url(../../assets/images/arrow-icon-left.svg) no-repeat center/cover;
+        height: 15px;
+        width: 8px;
+        background-size: 8px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        opacity: 1;
+
+        @media all and (min-width: $small-medium) {
+          height: 24px;
+          width: 13px;
+          background-size: 13px auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $small-medium) {
+    display: none;
+  }
+
+  &.desktop-data {
+    display: none;
+
+    @media screen and (min-width: $small-medium) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 11px;
+    }
+
+    @media all and (min-width:1024px) {
+      grid-column-gap: 22px;
+    }
+
+    @media screen and (min-width: $r-1300) {
+      grid-column-gap: 10px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .slick-list {
+    margin-right: -10px;
+
+    .category-boxes {
+      a {
+        .image-wrap {
+          img {
+            transition: all 0.2s;
+          }
+        }
+      }
+    }
+  }
+
+  .category-boxes {
+    border: 1px solid $category-border;
+    border-radius: 6px;
+    width: auto;
+    margin-right: 10px;
+    transition: all 0.2s;
+
+    @media screen and (min-width: $small-medium) {
+      margin: 0 0 20px;
+      width: 100%;
+    }
+
+    @media screen and (min-width: $r-1300) {
+      margin-bottom: 48px;
+    }
+
+    @media all and (max-width:767px) {
+      width: 120px;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      transform: scale(1);
+      box-shadow: none;
+
+      @media all and (min-width:768px) {
+        border: 1px solid $base-color;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        background-color: $white;
+        transform: scale(1.08);
+      }
+    }
+
+    a {
+      padding: 25px 12px 15px;
+
+      @media all and (max-width:767px) {
+        padding: 18px 12px 18px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        padding: 15px 15px 13px;
+      }
+
+
+
+      .image-wrap {
+        @media screen and (min-width: $r-1300) {
+          height: 50px;
+          margin: 0 10px 13px;
+        }
+
+        @media screen and (min-width: $desktop) {
+          height: 50px;
+        }
+      }
+
+      .category-title {
+        text-transform: initial;
+        @include fontsize(13px);
+        line-height: 1.3;
+
+        @media screen and (min-width: $r-1300) {
+          @include fontsize(16px);
+          line-height: 1.2;
+          margin: 0 -10px;
+        }
+
+        @media all and (max-width:767px) {
+          @include fontsize(12px);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.discount-categories {
+  .discount-categories-lists {
+    @media screen and (min-width: $small-medium) {
+      margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: $r-1300) {
+      margin-bottom: 24px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      .about-discount {
+        @media screen and (min-width: $small-medium) {
+          max-width: none;
+        }
+      }
+    }
+
+    .about-discount {
+      text-transform: $uppercase;
+      position: relative;
+      height: 138px;
+      margin-bottom: 15px;
+      transition: all 0.2s;
+
+      @media screen and (min-width: $small-medium) {
+        max-width: 680px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        height: 156px;
+      }
+
+      &.discount-upto {
+        .discount-details {
+          h4 {
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      &.interior-discount {
+        .discount-details {
+          h4 {
+            font-weight: normal;
+            margin-bottom: 5px;
+
+            @media screen and (min-width: $r-1300) {
+              margin-bottom: 8px;
+            }
+          }
+
+          .save-text {
+            font-weight: 500;
+            margin-bottom: 0;
+            opacity: 1;
+            text-transform: initial;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 6px;
+          display: block;
+
+          @media all and (max-width:767px) {
+            border-radius: 0;
+
+          }
+        }
+
+        .discount-details {
+          @include abs(0, 0, 0, 0);
+          margin: auto;
+          @include flex-property(flex, center, center);
+          flex-direction: column;
+          text-align: $align-center;
+          padding: 12px;
+
+          .save-text {
+            font-family: $oswald;
+            font-weight: 400;
+            opacity: 0.65;
+            color: $white;
+            @include fontsize(19px);
+            line-height: 1;
+            display: $block;
+            margin-bottom: 5px;
+
+            @media screen and (min-width: $r-1300) {
+              @include fontsize(24px);
+              margin-bottom: 8px;
+            }
+          }
+
+          .filter-text {
+            font-family: $oswald;
+            font-weight: 400;
+            @include fontsize(20px);
+            color: $white;
+            margin-bottom: 5px;
+            line-height: 1;
+
+            @media screen and (min-width: $r-1300) {
+              @include fontsize(30px);
+              margin-bottom: 8px;
+            }
+          }
+
+          h4 {
+            font-family: $oswald;
+            font-weight: 500;
+            @include fontsize(20px);
+            color: $white;
+            margin-bottom: 0;
+            line-height: 1;
+
+            @media screen and (min-width: $small-medium) {
+              @include fontsize(22px);
+            }
+
+            @media screen and (min-width: $desktop) {
+              @include fontsize(26px);
+            }
+
+            @media screen and (min-width: $r-1300) {
+              @include fontsize(42px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.product-blocks {
+  &.listing-product-details {
+    .category-boxes {
+      @media all and (min-width: $r-1300) {
+        margin-bottom: 20px;
+      }
+
+      a {
+        .image-wrap {
+          @media all and (min-width:1200px) {
+            height: 70px;
+
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//feeds
+.discount-categories-lists {
+  &.listing-page-discount {
+    &.single-slide {
+      padding: 0 !important;
+
+      .slick-list {
+        margin-left: 0 !important;
+
+      }
+    }
+
+    .slick-slide {
+      padding-right: 12px;
+
+      @media screen and (min-width: $small-medium) {
+        padding: 0 5px;
+      }
+    }
+
+    .about-discount {
+
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    .slick-list {
+      @media screen and (min-width: $small-medium) {
+        // margin-left: 0 !important;
+        margin: 0 -5px !important;
+      }
+    }
+
+    @media all and (max-width:767px) {
+      .regular {
+        &.slider {
+          display: flex;
+          overflow: auto;
+          padding-left: 15px;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .about-discount {
+            min-width: 320px;
+            margin-right: 10px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.faq-listing-page {
+  h3 {
+    color: $text-color;
+    font-family: $primary-fontfamily;
+    font-weight: $fw-bold;
+    @include fontsize(16px);
+    margin-bottom: 15px;
+
+    @media all and (min-width:$desktop) {
+      @include fontsize(22.2222px);
+
+    }
+  }
+}

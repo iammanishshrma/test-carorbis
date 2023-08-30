@@ -1,0 +1,110 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.category-discount-block {
+    .car-accessories-category {
+        &.sub-cat-accessories {
+            .discount-categories {
+                .discount-categories-lists {
+                    .about-discount a img {
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+
+        .discount-categories {
+
+
+            .discount-categories-lists {
+                display: block;
+
+                .slider {
+                    @media all and (max-width:767px) {
+                        display: flex;
+                    }
+                }
+
+                .slick-track {
+                    margin-left: 0 !important;
+                }
+
+                .slick-list {
+                    margin: 0 -8px;
+
+                    @media all and (min-width:$desktop) {
+                        margin: 0 -17px;
+                    }
+                }
+
+                .slick-slide {
+                    padding: 0 8px;
+
+                    @media all and (min-width:$desktop) {
+                        padding: 0 17px;
+                    }
+                }
+
+                .slick-prev {
+                    background: url(../../assets/images/pagination-lft-icon.svg) no-repeat;
+                    background-size: unset;
+                    width: 7px;
+                    height: 12px;
+                    left: -15px;
+                    transform: translate(0, -50%) scale(1.3);
+                    z-index: 1;
+
+                    &.slick-disabled {
+                        display: none !important;
+                    }
+
+                    @media all and (max-width:767px) {
+                        width: 5px;
+                        height: 10px;
+                        left: -15px;
+                        background-size: 5px auto;
+                    }
+
+                    @media all and (min-width:$desktop) {
+                        left: -20px;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+
+                }
+
+                .slick-next {
+                    transform: translate(0, -50%) scale(1.3);
+                    background: url(../../assets/images/pagination-rght-icon.svg) no-repeat;
+                    display: block;
+                    background-size: unset;
+                    width: 7px;
+                    height: 12px;
+                    right: -15px;
+                    z-index: 1;
+
+                    &.slick-disabled {
+                        display: none !important;
+                    }
+
+                    @media all and (max-width:767px) {
+                        width: 5px;
+                        height: 10px;
+                        right: -15px;
+                        background-size: 5px auto;
+                    }
+
+                    @media all and (min-width:$desktop) {
+                        right: -20px;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

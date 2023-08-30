@@ -1,0 +1,90 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.checkbox-wrapper {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 25px;
+    min-height: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.custom-label {
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            ~.checkmark {
+                background-color: #111E6C;
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .label-name {
+        margin-top: 3px;
+        color: $navy;
+        @include fontsize(14px);
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(15.5556px);
+        }
+    }
+
+    .label-count {
+        color: rgba(153, 153, 153, 1);
+        @include fontsize(14px);
+        margin-left: 4px;
+    }
+
+    &:hover {
+        input {
+            ~.checkmark {
+                background-color: #111E6C;
+            }
+        }
+    }
+
+    .checkmark {
+        &:after {
+            left: 6px;
+            top: 1.5px;
+            width: 7px;
+            height: 13px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 2px solid #111E6C;
+
+    &:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+}

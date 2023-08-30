@@ -1,0 +1,16 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.order-detail-process {
+    .product-rtl {
+        display: none;
+    }
+
+    .product-ltl {
+        .product-description {
+            .detail-page-status {
+                display: block;
+            }
+        }
+    }
+}

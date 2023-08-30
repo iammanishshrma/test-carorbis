@@ -1,0 +1,121 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.price-wrap {
+    .price {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+
+    h4 {
+        margin-bottom: 0;
+        color: $black;
+        @include fontsize(14px);
+
+        @media all and (min-width:$desktop) {
+            // @include fontsize(16px);
+            @include fontsize(17.7778px);
+        }
+
+        font-weight: $fw-medium;
+    }
+
+    .value {
+        color: $black;
+        @include fontsize(14px);
+        font-weight: $fw-semibold;
+        font-family: $primary-fontfamily;
+
+        @media all and (max-width:767px) {
+            font-weight: $fw-medium;
+        }
+
+        @media all and (min-width:$desktop) {
+            // @include fontsize(16px);
+            @include fontsize(17.7778px);
+        }
+    }
+
+    .discount {
+        color: $green;
+    }
+
+    .coupon {
+        color: $green;
+    }
+
+    .order-total {
+        padding-top: 15px;
+        border-top: 1px solid #D9D9D9;
+
+        @media all and (max-width:767px) {
+            padding-top: 10px;
+            border-top: none;
+        }
+
+        h4 {
+            font-weight: $fw-bold;
+            @include fontsize(16px);
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(20px);
+            }
+
+            @media all and (max-width:767px) {
+                @include fontsize(18px);
+            }
+        }
+
+        .value {
+            font-weight: $fw-bold;
+            @include fontsize(16px);
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(20px);
+            }
+
+            @media all and (max-width:767px) {
+                @include fontsize(18px);
+            }
+        }
+    }
+
+    @media all and (max-width:767px) {
+        .total-mrp {
+            h4 {
+                color: #8B96A5;
+                font-family: $roboto;
+                font-weight: $fw-regular;
+                @include fontsize(14px)
+            }
+        }
+
+        .discount {
+            h4 {
+                color: #8B96A5;
+                font-family: $roboto;
+                font-weight: $fw-regular;
+                @include fontsize(14px)
+            }
+        }
+
+        .shipping-wrap {
+            h4 {
+                color: #8B96A5;
+                font-weight: $fw-regular;
+                @include fontsize(14px);
+                font-family: $primary-fontfamily;
+            }
+        }
+
+        .promotion-wrap {
+            h4 {
+                color: #8B96A5;
+                font-weight: $fw-regular;
+                @include fontsize(14px);
+                font-family: $primary-fontfamily;
+            }
+        }
+    }
+}

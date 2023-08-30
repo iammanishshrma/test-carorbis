@@ -1,0 +1,74 @@
+@import "../../../../assets/styles/mixin.scss";
+@import "../../../../assets/styles/variable.scss";
+
+.rgt-account {
+  @media all and (min-width: $medium-992) {
+    width: calc(100% - 336px);
+  }
+
+  @media all and (min-width: $desktop) {
+    width: calc(100% - 380px);
+  }
+
+  .account-form {
+    h3 {
+      @include fontsize(18px);
+      color: $text-color;
+      margin-bottom: 20px;
+
+      @media all and (min-width: $small-medium) {
+        @include fontsize(22px);
+      }
+    }
+  }
+}
+
+.form-control {
+  background-color: rgba(208, 218, 226, .27);
+  border: 1px solid rgba(204, 213, 222, .49);
+  border-radius: 4px;
+  @include fontsize(14px);
+  padding: 14px 15px 12px 15px;
+  width: 100%;
+  color: $text-color;
+  margin-bottom: 0;
+  line-height: 1.2;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.login-btn {
+  border: 1px solid transparent;
+  padding: 14px 10px;
+  text-transform: capitalize;
+  color: $white;
+  @include fontsize(14px);
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  background: $navy;
+  border-radius: 6px;
+  transition: none;
+  margin-top: 15px;
+
+  &:hover {
+    background-color: $gray02;
+    color: $black;
+    border: 1px solid transparent;
+  }
+}
+
+.input-label {
+  color: #000;
+  @include fontsize(16px);
+  font-weight: $fw-semibold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 28px;
+}

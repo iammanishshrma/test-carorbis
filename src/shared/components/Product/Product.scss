@@ -1,0 +1,402 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.product-wrap {
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  padding: 28px 12px 16px;
+  width: 49%;
+  margin-bottom: 8px;
+
+  @media all and (max-width:767px) {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    @media all and (min-width:$small-medium) {
+      border-color: $navy;
+    }
+
+    .product-image {
+      img {
+        transform: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: $small-medium) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $medium) {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 28px 12px 16px;
+  }
+
+  @media screen and (min-width: $r-des-1350) {
+    padding: 25px 12px 15px;
+  }
+
+  .product-image {
+    margin-bottom: 25px;
+    position: relative;
+
+    @media screen and (min-width: $r-1300) {
+      margin-bottom: 25px;
+    }
+
+    .product-img-wrp {
+      @media all and (min-width:$small-medium) {
+        width: 80%;
+
+        margin: 0 auto;
+      }
+
+      @media all and (min-width:$desktop) {
+        width: 89%;
+      }
+    }
+
+    img {
+      transition: none;
+      width: 100%;
+    }
+
+    .recomended {
+      color: $white;
+      font-weight: $fw-semibold;
+      @include fontsize(11px);
+      line-height: 1;
+      min-width: 94px;
+      padding: 6px 8px;
+      background-color: $blue-background;
+      position: absolute;
+      right: 0;
+      top: -16px;
+      display: $block;
+      text-align: $align-center;
+      z-index: 2;
+      text-transform: uppercase;
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(13.3333px);
+        top: -16px;
+      }
+    }
+
+    .top-rated {
+      color: $white;
+      font-weight: $fw-semibold;
+
+      @include fontsize(11px);
+      line-height: 1;
+      min-width: 94px;
+      padding: 7px 8px;
+      background-color: $toprated-background;
+      position: absolute;
+      right: 0;
+      top: -16px;
+      display: $block;
+      text-align: $align-center;
+      text-transform: uppercase;
+      z-index: 1;
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(13.3333px);
+        top: -16px;
+      }
+    }
+
+    a {
+      display: $block;
+      min-height: 125px;
+      text-align: center;
+
+
+
+      @media screen and (min-width: $desktop) {
+        min-height: 190px;
+        @include flex-property(flex, center, center);
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        // width: 100%;
+
+        // @media screen and (min-width: $r-1300) {
+        //   height: auto;
+        // }
+      }
+    }
+  }
+
+  .product-content {
+    .brand-name {
+      @include fontsize(12px);
+      color: #000;
+      opacity: 1;
+      line-height: 1;
+      text-transform: $capitalize;
+      // font-weight: $fw-semibold;
+      font-weight: $fw-regular;
+      display: $block;
+      margin-bottom: 5px;
+
+      // @media screen and (min-width: $small-medium) {
+      //   @include fontsize(12px);
+      // }
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(14px);
+      }
+    }
+
+    .product-name {
+      @include fontsize(14px);
+      color: #000;
+      font-weight: $fw-regular;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-height: 1.2;
+      margin-bottom: 7px;
+      text-transform: capitalize;
+      font-family: $primary-fontfamily;
+      // min-height: 50px;
+
+      @media screen and (min-width: $small-medium) {
+        -webkit-line-clamp: 3;
+        line-height: 1.3;
+        @include fontsize(14px);
+        font-weight: $fw-medium;
+        margin-bottom: 9px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(17.7778px);
+        margin-bottom: 10px;
+        // min-height: 65px;
+      }
+
+      @media screen and (min-width: $r-1300) {
+        // margin-bottom: 12px;
+        line-height: 1.38;
+      }
+    }
+
+    .product-discount {
+      min-height: 39px;
+      margin-bottom: 0;
+
+      @media all and (min-width:1024px) {
+        min-height: auto;
+      }
+
+      // @media screen and (min-width: $medium) {
+      //   @include flex-property(flex, flex-end, flex-start);
+      //   flex-wrap: wrap;
+      // }
+
+
+
+      .price-wrap {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 7px;
+
+        @media screen and (min-width: $medium) {
+          margin-bottom: 0px;
+          margin-right: 5px;
+        }
+
+        .actual-price {
+          font-weight: $fw-regular;
+          @include fontsize(10px);
+          color: $light-gray;
+          margin-right: 8px;
+          text-decoration: line-through;
+
+          @media screen and (min-width: $small-medium) {
+            @include fontsize(12px);
+          }
+
+          @media screen and (min-width: $desktop) {
+            @include fontsize(15.5556px);
+            display: flex;
+            align-items: center;
+          }
+
+          @media screen and (min-width: $r-1300) {
+            line-height: 1.13;
+          }
+
+          .rupee-symbol {
+            @media screen and (min-width: $desktop) {
+              line-height: 0;
+            }
+
+            img {
+              max-width: 8px;
+              vertical-align: middle;
+              margin-right: 3px;
+
+              @media screen and (min-width: $desktop) {
+                max-width: 9px;
+                vertical-align: initial;
+              }
+
+              @media screen and (min-width: $r-1300) {
+                max-width: 100%;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+
+        .discount-price {
+          @include fontsize(16px);
+          font-weight: $fw-700;
+          color: $text-color;
+          line-height: 1;
+
+          @media screen and (min-width: $small-medium) {
+            @include fontsize(15px);
+          }
+
+          @media screen and (min-width: $desktop) {
+            margin-right: 10px;
+          }
+
+
+          @media screen and (min-width: $desktop) {
+            @include fontsize(22.2222px);
+          }
+
+          img {
+            max-width: 10px;
+            margin-right: 2px;
+
+            @media screen and (min-width: $small-medium) {
+              max-width: 9px;
+            }
+
+            @media screen and (min-width: $desktop) {
+              max-width: 11px;
+            }
+
+            @media screen and (min-width: $r-1300) {
+              max-width: 100%;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      .discount-off {
+        font-weight: $fw-regular;
+        color: $notify-background;
+        @include fontsize(12px);
+        margin-top: 7px;
+
+        @media screen and (min-width: $desktop) {
+          @include fontsize(15.5556px);
+        }
+      }
+    }
+  }
+}
+
+.rating-section {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: flex-end;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 18px;
+  }
+
+
+
+  .colored-star {
+    margin-right: 2px;
+    background: url("../../assets/images/yellow-star.svg") center no-repeat;
+    height: 13px;
+    width: 12px;
+    background-size: cover;
+
+    @media screen and (min-width: $desktop) {
+      height: 15.22px;
+      width: 16px;
+    }
+  }
+
+  .transparent-star {
+    margin-right: 2px;
+    background: url("../../assets/images/transparent.svg") center no-repeat;
+    height: 13px;
+    width: 12px;
+    background-size: cover;
+
+    @media screen and (min-width: $desktop) {
+      height: 15.22px;
+      width: 16px;
+    }
+  }
+
+  .rating-count {
+    @include fontsize(12px);
+    line-height: 1;
+    opacity: 0.6;
+    color: $text-color;
+    font-weight: $fw-regular;
+    margin-left: 4px;
+
+    @media screen and (min-width: $desktop) {
+      @include fontsize(13.3333px);
+    }
+  }
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  // .card-bottom-wrap {
+  //   margin-top: auto;
+  // }
+}
+
+//chnges for desktop
+@media all and (min-width:768px) {
+  .product-wrap {
+    .product-content {
+      .brand-name {
+        font-family: $primary-fontfamily;
+        @include fontsize(12px);
+      }
+    }
+  }
+}
+
+@media all and (min-width:$desktop) {
+
+  .product-wrap {
+    .product-content {
+      .brand-name {
+        @include fontsize(15.5556px);
+      }
+    }
+  }
+
+}

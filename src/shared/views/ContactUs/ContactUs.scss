@@ -1,0 +1,111 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.contact-ready-section {
+    padding: 30px 0;
+    background-color: #e0e0e0;
+
+    @media all and (min-width:$small-medium) {
+        padding: 50px 0;
+    }
+
+    @media all and (min-width:$desktop) {
+        padding: 70px 0;
+    }
+
+    .contact-ready-wrapper {
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .ltl-contact-wrap {
+        @media all and (min-width:$small-medium) {
+            width: 49%;
+        }
+
+    }
+
+    .rtl-contact-wrap {
+        @media all and (min-width:$small-medium) {
+            width: 45%;
+        }
+    }
+
+    h2 {
+        color: $navy;
+        @include fontsize(20px);
+        font-weight: $fw-bold;
+
+
+        @media all and (min-width:$small-medium) {
+            @include fontsize(25px);
+        }
+    }
+
+    p {
+        @include fontsize(16px);
+        margin-bottom: 30px;
+    }
+
+    .ready-form-control {
+        .form-block {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            border: 1px solid $gray-light-secondary;
+            border-radius: 4px;
+            padding: 15px;
+            color: $text-color;
+
+
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            &:focus {
+                box-shadow: none;
+                border: 2px solid #0d1e70;
+            }
+        }
+
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .btn {
+            background: $navy;
+            padding: 16px 20px;
+            color: #fff;
+            width: 100%;
+            font-weight: $fw-bold;
+            border-radius: 6px;
+            max-width: 300px;
+            @include fontsize(15px);
+
+            &:hover {
+                color: $black;
+                background-color: $gray02;
+            }
+
+        }
+
+        .contact-note {
+            width: 100%;
+            font-size: 14px;
+            color: #F7F5F475;
+            margin: 50px 0 0 0;
+            text-align: center;
+
+            a {
+                color: #f7f5f475;
+                text-decoration: underline;
+            }
+        }
+    }
+}

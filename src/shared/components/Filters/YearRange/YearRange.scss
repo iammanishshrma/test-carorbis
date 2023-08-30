@@ -1,0 +1,88 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.range-type {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    .price {
+        color: $navy;
+        @include fontsize(12px);
+        text-transform: capitalize;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(16px);
+        }
+    }
+}
+
+.range {
+    .p-slider {
+        .p-slider-range {
+            background: $navy;
+        }
+
+        .p-slider-handle {
+            height: 24px;
+            width: 24px;
+            background: $navy;
+            border: 2px solid $navy;
+            border-radius: 50%;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        &.p-slider-horizontal {
+            .p-slider-handle {
+                margin-top: -12px;
+                margin-left: -12px;
+            }
+        }
+    }
+
+    .p-slider:not(.p-disabled) .p-slider-handle:hover {
+        background: $navy;
+        border-color: $navy;
+    }
+}
+
+.range-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .range-value {
+        color: $text-color;
+        font-weight: $fw-bold;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(16px);
+        }
+    }
+}
+
+//range-slider
+.rnge-wrp-new {
+    margin-left: 0 !important;
+
+    .range-circle {
+        &:focus-visible {
+            border: 2px solid #FFFFFF;
+        }
+    }
+}
+
+.filter-box {
+    &.range-filter-head {
+        margin-top: 8px;
+        padding: 20px 30px;
+
+        h4 {
+            margin: 0 -10px 24px;
+        }
+    }
+}

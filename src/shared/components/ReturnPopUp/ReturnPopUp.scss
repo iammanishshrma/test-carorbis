@@ -1,0 +1,48 @@
+// add-img
+.add-img {
+    margin-bottom: 10px;
+
+    h3 {
+        margin-bottom: 10px;
+    }
+}
+
+.file-upload {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.file-wrap {
+    width: 84px;
+    height: 84px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    cursor: pointer;
+    background: url(../../assets/images/plus-icon.svg) no-repeat;
+
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        cursor: pointer;
+    }
+}
+
+.file-input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+}

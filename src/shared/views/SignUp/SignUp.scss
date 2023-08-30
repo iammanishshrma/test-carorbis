@@ -1,0 +1,155 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.form-group {
+    position: relative;
+
+    .icon-mail {
+        position: absolute;
+        left: 16px;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        background: url(../../assets/images/icon-mail-signup.png) no-repeat;
+        background-size: 18px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 0;
+    }
+
+    .icon-mobile {
+        left: 16px;
+        width: 18px;
+        height: 16px;
+        display: inline-block;
+        position: absolute;
+        background: url(../../assets/images/icon-mobile-signup.png) no-repeat;
+        background-size: 18px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+    .icon-user {
+        background: url(../../assets/images/user-icon.png) no-repeat;
+        position: absolute;
+        left: 16px;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background-size: 16px auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+}
+
+.media-login-wrapper {
+    margin-top: 30px;
+
+    h3 {
+        margin-bottom: 0;
+        text-transform: none;
+        text-align: center;
+    }
+
+    .social-login {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .google {
+        display: block;
+
+        .icon-google {
+            width: 46px;
+            height: 46px;
+            display: block;
+            background: url(../../assets/images/signup-google.png) no-repeat;
+            background-size: 46px auto;
+        }
+
+        margin-right: 15px;
+    }
+
+    .facebook {
+        display: block;
+
+        .icon-fb {
+            width: 46px;
+            height: 46px;
+            display: block;
+            background: url(../../assets/images/signup-fb.png) no-repeat;
+            background-size: 46px auto;
+        }
+    }
+}
+
+.otp-wrap {
+    &.signup-otp {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .send-otp {
+        color: $navy;
+        @include fontsize(12px);
+        font-weight: $fw-bold;
+        background-color: transparent;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(13.3333px);
+        }
+    }
+}
+
+.otp-wait {
+    margin-top: 6px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    @media all and (min-width:$desktop) {
+        @include fontsize(13.3333px);
+    }
+}
+
+.otp-screen {
+    width: 200px;
+    margin: 0 auto 20px;
+    border: 1px solid $white-secondary;
+    border-radius: 6px;
+    padding: 30px;
+}
+
+.otp-val {
+    &.singup-otp {
+        margin: 40px auto 20px;
+    }
+
+    width: 50%;
+    margin: 0 auto 20px;
+    max-width: 180px;
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .otp-control {
+        padding: 12px 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .error-msg {
+        position: static;
+        margin-top: 2px;
+        font-size: 12px;
+    }
+}

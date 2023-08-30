@@ -1,0 +1,263 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.address-form-wrap {
+    margin-top: 30px;
+
+    @media all and (min-width:$small-medium) {
+        margin-top: 25px;
+    }
+
+    .error-msg {
+        position: static;
+        margin-top: 3px;
+    }
+
+    .signup-text {
+        .heading-text {
+            h4 {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .form-control {
+        color: $text-color;
+        border: 1px solid #dfdfdf;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .form-wrap {
+        width: 100%;
+    }
+
+    .form-heading {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E9E9E9;
+
+        @media all and (min-width:768px) {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+
+        h2 {
+            @include fontsize(18px);
+            font-weight: $fw-semibold;
+
+            @media all and (min-width:768px) {
+                margin-bottom: 0;
+            }
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(17.7778px);
+            }
+        }
+
+        .btn-cancel {
+            .icon-cancel {
+                background: url(../../assets/images/icon-cancel.svg) no-repeat;
+                display: block;
+                height: 16px;
+                width: 16px;
+                background-size: 16px auto;
+
+            }
+        }
+    }
+
+    .input-wrapper {
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media all and (min-width:$small-medium) {
+            .form-block {
+                width: calc(50% - 10px);
+            }
+        }
+    }
+
+    .select-wrapper {
+        .p-dropdown {
+            width: 100%;
+            color: rgba(0, 0, 0, 0.5);
+            border: 1px solid #DFDFDF;
+            height: 44px;
+
+            &:focus {
+                border: 2px solid #0d1e70;
+            }
+
+            &:hover {
+                border: 1px solid #DFDFDF;
+            }
+
+            .p-dropdown-label.p-inputtext {
+                padding: 12px 13px;
+            }
+        }
+
+        .p-dropdown-trigger-icon {
+            background: url(../../assets/images/icon-select.svg) no-repeat;
+            width: 12px;
+            height: 8px;
+            background-size: 12px auto;
+        }
+
+    }
+
+    .address-type-wrap {
+        display: flex;
+
+        .radio-wrapper {
+            margin-right: 7px;
+            position: relative;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                z-index: 1;
+                cursor: pointer;
+
+                &:checked {
+                    ~.custom-radio {
+                        color: $black;
+                        background: $gray02;
+                        border: 1px solid $black;
+                    }
+                }
+            }
+
+            .custom-radio {
+                color: #667085;
+                border: 1px solid #667085;
+                padding: 8px 19px;
+                border-radius: 25px;
+                font-weight: $fw-medium;
+                transition: none;
+                @include fontsize(12px);
+
+                @media all and (min-width:$small-medium) {
+                    @include fontsize(14px);
+                }
+            }
+        }
+    }
+
+    .add-form-btns {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .btn-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .save {
+            padding: 10px 25px;
+            background-color: $navy;
+            font-weight: $fw-bold;
+            text-transform: uppercase;
+            color: $white;
+            @include fontsize(14px);
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: none;
+            display: block;
+            width: 106px;
+            margin-right: 10px;
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(17.7778px);
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                background-color: $gray02;
+                color: $black;
+                border: 1px solid transparent;
+            }
+
+            @media all and (min-width:$desktop) {
+                width: 140px;
+            }
+        }
+
+        .cancel {
+            padding: 10px 25px;
+            background-color: $notify-background;
+            font-weight: $fw-bold;
+            text-transform: uppercase;
+            color: $white;
+            @include fontsize(14px);
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: none;
+            display: block;
+            width: 106px;
+
+            @media all and (min-width:$desktop) {
+                width: 140px;
+            }
+
+            &:hover {
+                background-color: $gray02;
+                color: $black;
+                border: 1px solid transparent;
+            }
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(17.7778px);
+            }
+        }
+    }
+
+    .address-select-wrap {
+        h2 {
+            @include fontsize(16px);
+            font-weight: $fw-semibold;
+            color: $black;
+            margin-bottom: 18px;
+        }
+
+        .p-dropdown {
+            .p-dropdown-label {
+                .p-placeholder {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+
+    .quick-signup {
+        align-items: center;
+    }
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background-color: $gray02 !important;
+    color: #000 !important;
+}
+
+.account-form-wrap .p-dropdown:not(.p-disabled) .p-focus {
+    border: 2px solid #0d1e70 !important;
+}
+
+.add-address-btn {
+    z-index: 100 !important;
+}

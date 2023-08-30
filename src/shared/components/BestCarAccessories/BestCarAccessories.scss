@@ -1,0 +1,72 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.car-accessories {
+    h2 {
+        font-weight: $fw-semibold;
+        @include fontsize(16px);
+        margin-bottom: 22px;
+        color: $black;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22.2222px);
+            margin-bottom: 15px;
+        }
+    }
+
+    h3 {
+        font-weight: $fw-bold;
+        @include fontsize(16px);
+        margin-bottom: 10px;
+        color: #000;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(17.7778px);
+            margin-bottom: 15px;
+        }
+    }
+
+    p {
+
+        @include fontsize(14px);
+        font-weight: $fw-regular;
+        margin-bottom: 25px;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(17.7778px);
+            margin-bottom: 25px;
+        }
+    }
+
+    .car-accessories-content {
+        @include fontsize(14px);
+        font-weight: $fw-regular;
+        margin-bottom: 25px;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(17.7778px);
+            margin-bottom: 40px;
+        }
+    }
+
+    .car-wax-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media all and (min-width:$desktop) {
+            margin-bottom: 33px;
+        }
+
+        li {
+            padding-right: 12px;
+            margin-right: 12px;
+            border-right: 1px solid #CDCDCD;
+            margin-bottom: 12px;
+            @include fontsize(14px);
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(17.7778px);
+            }
+        }
+    }
+}

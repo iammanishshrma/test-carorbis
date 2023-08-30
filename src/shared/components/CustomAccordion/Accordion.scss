@@ -1,0 +1,82 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.accordion-item {
+	border-bottom: 1px solid #E9E9E9;
+	color: #333333;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	.accordion-title {
+		cursor: pointer;
+		position: relative;
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1.2;
+		padding: 20px 50px 20px 0;
+
+		.caret {
+			position: absolute;
+			top: calc(50% - 3px);
+			right: 0.5rem;
+			width: 12px;
+			height: 7px;
+			display: block;
+
+			&.down {
+				background: url(../../assets/images/accordion-down-icon.svg) no-repeat;
+				background-size: 12px auto;
+			}
+
+			&.up {
+				background: url(../../assets/images/accordion-up-icon.svg) no-repeat;
+				background-size: 12px auto;
+			}
+		}
+
+		@media all and (min-width:$desktop) {
+			@include fontsize(17.7778px);
+		}
+	}
+
+	.accordion-content {
+		padding: 10px 0 25px 0;
+		color: #000;
+		@include fontsize(14px);
+
+		@media (min-width: 768px) {
+			padding: 10px 40px 25px 0;
+		}
+
+		@media (min-width: $desktop) {
+			padding: 10px 40px 25px 0;
+
+			@media all and (min-width:$desktop) {
+				@include fontsize(17.7778px);
+			}
+		}
+	}
+
+	.slide-up-bottom-enter {
+		opacity: 0;
+		height: 0;
+	}
+
+	.slide-up-bottom-enter-active {
+		height: auto;
+		opacity: 1;
+		transition: all 200ms;
+	}
+
+	.slide-up-bottom-exit {
+		opacity: 1;
+	}
+
+	.slide-up-bottom-exit-active {
+		height: 0;
+		opacity: 0;
+		// transition: all 300ms;
+	}
+}

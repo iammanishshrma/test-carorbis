@@ -1,0 +1,76 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.text-wrap {
+    padding: 30px 0;
+
+    h2 {
+        color: $text-color;
+        @include fontsize(30px);
+        margin-bottom: 15px;
+        font-weight: $fw-bold;
+    }
+
+    h3 {
+        @include fontsize(30px);
+        margin-bottom: 15px;
+        font-weight: $fw-semibold;
+    }
+
+    p {
+        @include fontsize(15px);
+        margin-bottom: 15px;
+    }
+}
+
+.our-story-wrap {
+    padding: 10px 0;
+
+    .card-wrapper {
+        @media all and (min-width:$small-medium) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .card-block {
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        margin-bottom: 20px;
+
+        @media all and (min-width:$small-medium) {
+            width: 32%;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .card-content {
+            padding: 25px;
+
+            h2 {
+                @include fontsize(20px);
+                margin-bottom: 10px;
+                color: $black;
+                font-weight: $fw-bold;
+            }
+
+            p {
+                @include fontsize(14px);
+                margin-bottom: 20px;
+            }
+
+            .card-link {
+                color: $blue-secondary;
+                @include fontsize(16px);
+                font-weight: $fw-semibold;
+                transition: all 0.5s;
+
+                &:hover {
+                    color: $navy;
+                }
+            }
+        }
+    }
+}

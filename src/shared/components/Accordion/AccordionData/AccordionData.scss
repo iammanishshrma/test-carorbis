@@ -1,0 +1,105 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.accordion-content {
+    .p-accordion .p-accordion-header .p-accordion-header-link {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        border-radius: 0;
+        color: $text-color;
+        justify-content: space-between;
+    }
+
+    .p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus {
+        box-shadow: none;
+    }
+
+    .p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
+        border-color: transparent;
+        background: transparent;
+        color: $text-color;
+    }
+
+    .p-accordion .p-accordion-content {
+        border: 0;
+        color: $text-color;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 10px 0 25px 0;
+
+        @media all and (min-width:$small-medium) {
+            padding: 10px 40px 25px 0;
+        }
+    }
+
+
+
+    .p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
+        border-color: transparent;
+        background: transparent;
+        color: $text-color;
+    }
+
+    .p-accordion-header-text {
+        color: $text-color;
+        @include fontsize(16px);
+        line-height: 1.2;
+        order: 1;
+        width: 85%;
+        padding: 15px 0;
+        font-family: $primary-fontfamily;
+
+        @media all and (min-width:768px) {
+            padding: 20px 0;
+        }
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(17.7778px);
+        }
+    }
+
+    .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+        background: transparent;
+        border-color: transparent;
+        color: $text-color;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .p-accordion-content p {
+        @include fontsize(14px);
+        font-family: $primary-fontfamily;
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(17.7778px);
+        }
+    }
+
+    .p-accordion .p-accordion-tab {
+        border-bottom: 1px solid #E9E9E9;
+        margin-bottom: 0;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .p-accordion-toggle-icon.pi.pi-chevron-right {
+        background: url(../../../assets/images/accordion-down-icon.svg) no-repeat;
+        width: 12px;
+        height: 6px;
+        background-size: 12px auto;
+        display: block;
+        order: 2;
+    }
+
+    .p-accordion-toggle-icon.pi.pi-chevron-down {
+        background: url(../../../assets/images/accordion-up-icon.svg) no-repeat;
+        width: 12px;
+        height: 6px;
+        background-size: 12px auto;
+        display: block;
+        order: 2;
+    }
+}

@@ -1,0 +1,101 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.seller-support-wrapper {
+    padding: 30px 0;
+
+    @media all and (min-width:$small-medium) {
+        padding: 50px 0;
+    }
+
+    h2 {
+        @include fontsize(25px);
+        font-weight: $fw-bold;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        @include fontsize(20px);
+        font-weight: $fw-regular;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .form-wrapper {
+        border-radius: 6px;
+        border: 1px solid #E9E9E9;
+        padding: 30px 15px 30px;
+        background-color: #f6faff;
+
+        .text-area {
+            resize: none;
+            border: none;
+            width: 100%;
+            height: 130px;
+        }
+
+
+
+        .text-area-element {
+            background-color: $white;
+            height: auto;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: $fw-semibold;
+            margin-bottom: 10px;
+        }
+
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-btn {
+            padding: 13px 20px;
+            background-color: $navy;
+            color: $white;
+            border-radius: 6px;
+            width: 100%;
+            @include fontsize(16px);
+            font-weight: 600;
+            max-width: 300px;
+
+            transition: all 0.5s;
+            margin: 20px auto 0;
+
+            &:hover {
+                color: $black;
+                background-color: $gray02;
+            }
+        }
+
+        .p-dropdown {
+            width: 100%;
+            border: 1px solid #C2C9D1;
+        }
+
+        .min-word {
+            text-align: left;
+            @include fontsize(12px);
+            margin-top: 5px;
+            display: block;
+        }
+    }
+
+    .get-support-wrapper {
+        @media all and (min-width:$small-medium) {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .form-block {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,255 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.page-count {
+    color: $navy;
+    @include fontsize(14px);
+    font-family: $primary-fontfamily;
+    margin-bottom: 15px;
+
+    @media all and (min-width:$small-medium) {
+        margin-bottom: 0;
+    }
+
+    @media all and (min-width:$desktop) {
+        @include fontsize(17.7778px);
+    }
+}
+
+.pagination-main-wrap {
+    .p-paginator {
+        justify-content: center !important;
+        padding: 0 !important;
+        font-family: $primary-fontfamily;
+
+        @media all and (min-width:$small-medium) {
+            justify-content: flex-start !important;
+            margin-top: 30px;
+        }
+
+        @media all and (min-width:$medium) {
+            width: 66%;
+        }
+
+        @media all and (min-width:$r-1300) {
+            width: 63%;
+        }
+
+        .p-paginator-prev {
+            order: 2;
+            background-color: transparent;
+            border: 2px solid $navy;
+            color: $navy;
+            border-radius: 6px;
+            @include fontsize(12px);
+            position: relative;
+            height: auto;
+            padding: 8px 5px;
+            min-width: 55px;
+            font-weight: 600;
+            font-family: $primary-fontfamily;
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(15.5556px);
+            }
+
+            >span {
+                margin-left: 6px;
+                font-weight: 400;
+            }
+
+            @media all and (min-width:$small-medium) {
+                padding: 10px;
+                min-width: 73px;
+            }
+
+            @media all and (min-width:$medium) {
+                padding: 12px 35px;
+            }
+
+            @media all and (min-width:$desktop) {
+                min-width: 85px;
+            }
+
+            &:after {
+                content: "";
+                background: url(../../assets/images/pagination-lft-icon.svg) no-repeat;
+                width: 6px;
+                height: 12px;
+                display: block;
+                margin-left: 0;
+                background-size: 6px auto;
+                position: absolute;
+                left: 6px;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 1px;
+
+                @media all and (min-width:$small-medium) {
+                    left: 6px;
+                }
+
+                @media all and (min-width:$medium) {
+                    left: 20px;
+                }
+
+                @media all and (min-width:$medium) {
+                    left: 10px;
+                    // margin-top: 0.5px;
+                }
+
+                @media all and (min-width:$desktop) {
+                    left: 15px;
+                    // margin-top: 0;
+                }
+            }
+        }
+
+        .p-paginator-pages {
+            order: 3;
+            width: auto !important;
+            margin: 0 12px;
+
+            @media all and (min-width:$small-medium) {
+                margin: 0 12px;
+            }
+
+            @media all and (min-width:$desktop) {
+                margin: 0 30px;
+            }
+
+            .p-paginator-page {
+                color: $text-color;
+                min-width: auto;
+                height: auto;
+                margin-right: 3px;
+                transition: none;
+                border-radius: 4px;
+                padding: 9px 7px;
+                box-shadow: none;
+                @include fontsize(12px);
+
+                @media all and (min-width:$medium) {
+                    padding: 10px;
+                    @include fontsize(14px);
+                }
+
+                &.p-highlight {
+                    background: $navy;
+                    border-color: transparent;
+                    color: $white;
+                    font-family: $primary-fontfamily;
+
+                    @media all and (min-width:$desktop) {
+                        @include fontsize(13.3333px);
+                    }
+
+                    &:hover {
+                        background-color: $gray02;
+                        color: $black;
+
+                    }
+                }
+            }
+        }
+
+        .p-paginator-next {
+            order: 4;
+            position: relative;
+            background-color: transparent;
+            border: 2px solid $navy;
+            color: $navy;
+            border-radius: 6px;
+            @include fontsize(12px);
+            height: auto;
+            padding: 8px 5px;
+            min-width: 55px;
+            font-family: $primary-fontfamily;
+
+            @media all and (min-width:$desktop) {
+                @include fontsize(15.5556px);
+            }
+
+            >span {
+                margin-right: 10px;
+                font-weight: 400;
+            }
+
+            @media all and (min-width:$small-medium) {
+                padding: 10px;
+                min-width: 73px;
+            }
+
+            @media all and (min-width:$medium) {
+                padding: 12px 35px;
+            }
+
+            @media all and (min-width:$desktop) {
+                min-width: 85px;
+            }
+
+            &:after {
+                content: "";
+                background: url(../../assets/images/pagination-rght-icon.svg) no-repeat;
+                width: 6px;
+                height: 12px;
+                display: block;
+                margin-left: 0;
+                background-size: 6px auto;
+                position: absolute;
+                right: 9px;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 1px;
+
+                @media all and (min-width:$medium) {
+                    right: 20px;
+                }
+
+                @media all and (min-width:$medium) {
+                    right: 10px;
+                    // margin-top: 0.5px;
+                }
+
+                @media all and (min-width:$desktop) {
+                    right: 15px;
+                    // margin-top: 0;
+                }
+            }
+        }
+
+        >span {
+            width: 100% !important;
+
+
+            @media all and (min-width:$small-medium) {
+                width: auto !important;
+                margin-right: auto;
+            }
+        }
+
+        .p-paginator-next:not(.p-disabled):not(.p-highlight):hover {
+            box-shadow: none;
+            border: 2px solid transparent;
+
+            &::after {
+                filter: brightness(0);
+            }
+        }
+
+        .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover {
+            box-shadow: none;
+            border: 2px solid transparent;
+
+            &::after {
+                filter: brightness(0);
+            }
+        }
+    }
+}
+
+.pagination-wrap {
+    color: $text-color;
+    user-select: none;
+    text-align: center;
+}

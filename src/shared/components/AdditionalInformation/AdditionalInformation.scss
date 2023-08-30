@@ -1,0 +1,80 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.info-wrap {
+  padding: 40px 0;
+
+  @media all and (max-width:767px) {
+    padding: 25px 0 40px;
+  }
+
+  @media all and (min-width:$small-medium) {
+    padding-bottom: 60px;
+  }
+
+  h3 {
+    color: $text-color;
+    @include fontsize(16px);
+    margin-bottom: 20px;
+
+    @media all and (min-width:$desktop) {
+      @include fontsize(17.7778px);
+    }
+  }
+
+  p {
+    @include fontsize(14px);
+    margin-bottom: 10px;
+
+    @media all and (min-width:$desktop) {
+      @include fontsize(17.7778px);
+    }
+  }
+
+  .primary-info {
+    margin-bottom: 40px;
+  }
+}
+
+.search-info {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin-right: 15px;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -8px;
+        height: 12px;
+        width: 1px;
+        background-color: #000000;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      color: $black;
+      @include fontsize(14px);
+      text-transform: capitalize;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @media all and (min-width:$desktop) {
+        @include fontsize(17.7778px);
+      }
+    }
+  }
+}

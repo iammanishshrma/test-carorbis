@@ -1,0 +1,30 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.most-search-content {
+    h3 {
+        @include fontsize(16px);
+        color: #000;
+        margin-bottom: 30px;
+        position: relative;
+
+        @media all and (max-width:767px) {
+            @include fontsize(16px);
+            margin-bottom: 18px;
+        }
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22.2222px);
+        }
+
+    }
+
+    p {
+        margin-bottom: 15px;
+        @include fontsize(14px);
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(17.7778px);
+        }
+    }
+}
